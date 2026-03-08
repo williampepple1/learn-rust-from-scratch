@@ -197,51 +197,51 @@ cargo new day-07-mini-project
 
 ### Week 9: Closures & Iterators (May 3 – May 9)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | Closures: syntax, capturing environment, `Fn`, `FnMut`, `FnOnce` | Write closures that capture by reference and by value |
-| 2 | Closures as function parameters and return values | Build a configurable sorter using closures |
-| 3 | Iterator trait: `next()`, consuming adaptors, iterator adaptors | Implement `Iterator` for a custom `Fibonacci` struct |
-| 4 | Advanced iterator methods: `zip`, `enumerate`, `flat_map`, `fold`, `scan` | Solve data processing challenges with iterators |
-| 5 | Chaining iterators, lazy evaluation, performance | Benchmark iterator chains vs manual loops |
-| 6 | Creating custom iterators | Build a `Range` iterator with step |
-| 7 | **Mini-project:** Data pipeline processor | Process JSON/CSV data using iterator chains |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | Closures: syntax, capturing environment, `Fn`, `FnMut`, `FnOnce` | `day-01-closures.ipynb` | Write closures that capture by reference and by value |
+| 2 | Closures as function parameters and return values | `day-02-closures-advanced.ipynb` | Build a configurable sorter using closures |
+| 3 | Iterator trait: `next()`, consuming adaptors, iterator adaptors | `day-03-iterator-trait.ipynb` | Implement `Iterator` for a custom `Fibonacci` struct |
+| 4 | Advanced iterator methods: `zip`, `enumerate`, `flat_map`, `fold`, `scan` | `day-04-advanced-iterators.ipynb` | Solve data processing challenges with iterators |
+| 5 | Chaining iterators, lazy evaluation, performance | `day-05-chaining-performance.ipynb` | Benchmark iterator chains vs manual loops |
+| 6 | Creating custom iterators | `day-06-custom-iterators.ipynb` | Build a `Range` iterator with step |
+| 7 | **Mini-project:** Data pipeline processor | `day-07-mini-project-data-pipeline.ipynb` | Process JSON/CSV data using iterator chains |
 
 ### Week 10: Smart Pointers & Memory (May 10 – May 16)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | `Box<T>`: heap allocation, recursive types | Implement a cons list and binary tree with `Box` |
-| 2 | `Deref` trait, deref coercion, `Drop` trait | Custom smart pointer implementation |
-| 3 | `Rc<T>`: reference counting, shared ownership | Model a graph with shared nodes |
-| 4 | `RefCell<T>`: interior mutability, runtime borrow checking | Build a mock object for testing |
-| 5 | `Rc<RefCell<T>>` pattern | Mutable shared state examples |
-| 6 | `Cow<T>`: clone-on-write, avoiding unnecessary allocations | Optimize string processing with `Cow` |
-| 7 | **Mini-project:** Simple linked list implementation | Singly linked list with insert, delete, search, display |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | `Box<T>`: heap allocation, recursive types | `day-01-box.ipynb` | Implement a cons list and binary tree with `Box` |
+| 2 | `Deref` trait, deref coercion, `Drop` trait | `day-02-deref-drop.ipynb` | Custom smart pointer implementation |
+| 3 | `Rc<T>`: reference counting, shared ownership | `day-03-rc.ipynb` | Model a graph with shared nodes |
+| 4 | `RefCell<T>`: interior mutability, runtime borrow checking | `day-04-refcell.ipynb` | Build a mock object for testing |
+| 5 | `Rc<RefCell<T>>` pattern | `day-05-rc-refcell.ipynb` | Mutable shared state examples |
+| 6 | `Cow<T>`: clone-on-write, avoiding unnecessary allocations | `day-06-cow.ipynb` | Optimize string processing with `Cow` |
+| 7 | **Mini-project:** Simple linked list implementation | `day-07-mini-project-linked-list.ipynb` | Singly linked list with insert, delete, search, display |
 
 ### Week 11: Testing & Documentation (May 17 – May 23)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | Unit tests: `#[test]`, `assert!`, `assert_eq!`, `assert_ne!` | Add tests to ALL previous projects |
-| 2 | Testing panics: `#[should_panic]`, testing `Result` | Test error paths |
-| 3 | Integration tests: `tests/` directory, test organization | Write integration tests for the CSV parser |
-| 4 | Test-driven development (TDD) workflow | Build a new module using TDD |
-| 5 | Documentation: `///`, `//!`, doc tests, `cargo doc` | Fully document the linked list project |
-| 6 | Benchmarking basics with `criterion` crate | Benchmark your data structures |
-| 7 | **Mini-project:** A fully tested & documented math library | Covers basic arithmetic, statistics, and linear algebra operations |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | Unit tests: `#[test]`, `assert!`, `assert_eq!`, `assert_ne!` | `day-01-unit-tests.ipynb` | Add tests to ALL previous projects |
+| 2 | Testing panics: `#[should_panic]`, testing `Result` | `day-02-testing-panics.ipynb` | Test error paths |
+| 3 | Integration tests: `tests/` directory, test organization | `day-03-integration-tests.ipynb` | Write integration tests for the CSV parser |
+| 4 | Test-driven development (TDD) workflow | `day-04-tdd.ipynb` | Build a new module using TDD |
+| 5 | Documentation: `///`, `//!`, doc tests, `cargo doc` | `day-05-documentation.ipynb` | Fully document the linked list project |
+| 6 | Benchmarking basics with `criterion` crate | `day-06-benchmarking.ipynb` | Benchmark your data structures |
+| 7 | **Mini-project:** A fully tested & documented math library | `day-07-mini-project-math-library.ipynb` | Covers basic arithmetic, statistics, and linear algebra operations |
 
 ### Week 12: Idiomatic Rust & Design Patterns (May 24 – May 30)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | The newtype pattern | Wrap primitives for type safety |
-| 2 | Builder pattern | Implement a builder for a complex config struct |
-| 3 | Type state pattern | Model a state machine with compile-time guarantees |
-| 4 | Using `From`/`Into` for conversions | Ergonomic type conversions across your codebase |
-| 5 | Operator overloading: `Add`, `Mul`, `Index`, etc. | Build a `Vector2D` with full operator support |
-| 6 | `PhantomData`, zero-cost abstractions | Explore advanced type-level programming |
-| 7 | **Mini-project:** Expression evaluator | Parse and evaluate mathematical expressions using Rust patterns |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | The newtype pattern | `day-01-newtype-pattern.ipynb` | Wrap primitives for type safety |
+| 2 | Builder pattern | `day-02-builder-pattern.ipynb` | Implement a builder for a complex config struct |
+| 3 | Type state pattern | `day-03-typestate-pattern.ipynb` | Model a state machine with compile-time guarantees |
+| 4 | Using `From`/`Into` for conversions | `day-04-from-into.ipynb` | Ergonomic type conversions across your codebase |
+| 5 | Operator overloading: `Add`, `Mul`, `Index`, etc. | `day-05-operator-overloading.ipynb` | Build a `Vector2D` with full operator support |
+| 6 | `PhantomData`, zero-cost abstractions | `day-06-phantom-data.ipynb` | Explore advanced type-level programming |
+| 7 | **Mini-project:** Expression evaluator | `day-07-mini-project-expression-evaluator.ipynb` | Parse and evaluate mathematical expressions using Rust patterns |
 
 ### 🏆 Month 3 Checkpoint
 - [ ] Closures and iterators feel natural
