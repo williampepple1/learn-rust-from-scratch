@@ -47,10 +47,10 @@ learn-rust-from-scratch/
 ├── README.md                  # This file (your roadmap)
 ├── month-01-foundations/
 │   ├── week-01/
-│   │   ├── day-01-hello-world/
-│   │   ├── day-02-variables/
+│   │   ├── day-01-hello-world.ipynb
+│   │   ├── day-02-variables.ipynb
 │   │   ├── ...
-│   │   └── mini-project/
+│   │   └── day-07-mini-project-calculator.ipynb
 │   ├── week-02/
 │   ├── week-03/
 │   └── week-04/
@@ -63,9 +63,10 @@ learn-rust-from-scratch/
     └── notes.md
 ```
 
-Each day folder is a Cargo project:
+Each day is a Jupyter Notebook (`.ipynb`) using the EvCxR Rust kernel.
+For standalone projects, create a Cargo project:
 ```bash
-cargo new day-01-hello-world
+cargo new day-07-mini-project
 ```
 
 ---
@@ -76,51 +77,51 @@ cargo new day-01-hello-world
 
 ### Week 1: Hello, Rust! (Mar 8 – Mar 14)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | Install Rust (`rustup`), VS Code + rust-analyzer, first `cargo new` | Create `hello-world` project, print your name |
-| 2 | Variables, mutability, constants, shadowing | Write programs demonstrating `let`, `let mut`, `const`, shadowing |
-| 3 | Data types: integers, floats, booleans, characters | Type annotation exercises, overflow experiments |
-| 4 | Strings: `String` vs `&str`, basic string operations | Build a string formatter that takes a name and outputs a greeting |
-| 5 | Tuples and arrays | Write a program that stores RGB colors as tuples and does basic operations |
-| 6 | Functions: parameters, return values, expressions vs statements | Build a temperature converter (Celsius ↔ Fahrenheit ↔ Kelvin) |
-| 7 | **Mini-project:** Simple calculator (add, subtract, multiply, divide) | CLI calculator using `std::io` for user input |
+| Day | File | Topic | Exercise / Commit |
+|-----|------|-------|-------------------|
+| 1 | `day-01-hello-world.ipynb` | Install Rust (`rustup`), VS Code + rust-analyzer, first `cargo new` | Create `hello-world` project, print your name |
+| 2 | `day-02-variables.ipynb` | Variables, mutability, constants, shadowing | Write programs demonstrating `let`, `let mut`, `const`, shadowing |
+| 3 | `day-03-data-types.ipynb` | Data types: integers, floats, booleans, characters | Type annotation exercises, overflow experiments |
+| 4 | `day-04-strings.ipynb` | Strings: `String` vs `&str`, basic string operations | Build a string formatter that takes a name and outputs a greeting |
+| 5 | `day-05-tuples-and-arrays.ipynb` | Tuples and arrays | Write a program that stores RGB colors as tuples and does basic operations |
+| 6 | `day-06-functions.ipynb` | Functions: parameters, return values, expressions vs statements | Build a temperature converter (Celsius ↔ Fahrenheit ↔ Kelvin) |
+| 7 | `day-07-mini-project-calculator.ipynb` | **Mini-project:** Simple calculator (add, subtract, multiply, divide) | CLI calculator using `std::io` for user input |
 
 ### Week 2: Control Flow & Collections (Mar 15 – Mar 21)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 8 | `if`/`else`, `if` in `let` statements | FizzBuzz implementation |
-| 9 | Loops: `loop`, `while`, `for`, loop labels, `break`/`continue` | 99 bottles of beer, multiplication table generator |
-| 10 | `match` expressions & patterns | Day of the week matcher, grade classifier |
-| 11 | Vectors: creating, reading, updating, iterating | Build a dynamic to-do list (in-memory) |
-| 12 | HashMaps: insert, access, update, iteration | Word frequency counter from a text |
-| 13 | Iterators basics: `.iter()`, `.map()`, `.filter()`, `.collect()` | Transform a list of numbers using iterator chains |
-| 14 | **Mini-project:** Contact book — store names, phones, emails in a HashMap | Full CRUD operations via CLI |
+| Day | File | Topic | Exercise / Commit |
+|-----|------|-------|-------------------|
+| 1 | `day-01-if-else.ipynb` | `if`/`else`, `if` in `let` statements | FizzBuzz implementation |
+| 2 | `day-02-loops.ipynb` | Loops: `loop`, `while`, `for`, loop labels, `break`/`continue` | 99 bottles of beer, multiplication table generator |
+| 3 | `day-03-match.ipynb` | `match` expressions & patterns | Day of the week matcher, grade classifier |
+| 4 | `day-04-vectors.ipynb` | Vectors: creating, reading, updating, iterating | Build a dynamic to-do list (in-memory) |
+| 5 | `day-05-hashmaps.ipynb` | HashMaps: insert, access, update, iteration | Word frequency counter from a text |
+| 6 | `day-06-iterators.ipynb` | Iterators basics: `.iter()`, `.map()`, `.filter()`, `.collect()` | Transform a list of numbers using iterator chains |
+| 7 | `day-07-mini-project-contact-book.ipynb` | **Mini-project:** Contact book — store names, phones, emails in a HashMap | Full CRUD operations via CLI |
 
 ### Week 3: Structs, Enums & Pattern Matching (Mar 22 – Mar 28)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 15 | Structs: defining, instantiating, field init shorthand | Model a `Book` struct with title, author, pages, rating |
-| 16 | Methods & associated functions (`impl` blocks) | Add methods: `summary()`, `is_long()`, `rate()` |
-| 17 | Tuple structs, unit structs, struct update syntax | Model 2D/3D points, implement distance calculations |
-| 18 | Enums: defining, variants with data | Model traffic lights, playing cards |
-| 19 | `Option<T>` — Rust's null safety | Write functions that safely handle missing values |
-| 20 | `Result<T, E>` — Error handling basics | File reading with proper error handling |
-| 21 | **Mini-project:** Student grade management system | Structs + enums + pattern matching + collections |
+| Day | File | Topic | Exercise / Commit |
+|-----|------|-------|-------------------|
+| 1 | `day-01-structs.ipynb` | Structs: defining, instantiating, field init shorthand | Model a `Book` struct with title, author, pages, rating |
+| 2 | `day-02-methods.ipynb` | Methods & associated functions (`impl` blocks) | Add methods: `summary()`, `is_long()`, `rate()` |
+| 3 | `day-03-tuple-structs.ipynb` | Tuple structs, unit structs, struct update syntax | Model 2D/3D points, implement distance calculations |
+| 4 | `day-04-enums.ipynb` | Enums: defining, variants with data | Model traffic lights, playing cards |
+| 5 | `day-05-option.ipynb` | `Option<T>` — Rust's null safety | Write functions that safely handle missing values |
+| 6 | `day-06-result.ipynb` | `Result<T, E>` — Error handling basics | File reading with proper error handling |
+| 7 | `day-07-mini-project-grade-system.ipynb` | **Mini-project:** Student grade management system | Structs + enums + pattern matching + collections |
 
 ### Week 4: Modules, Crates & Cargo (Mar 29 – Apr 4)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 22 | Modules: `mod`, `pub`, `use`, module tree | Reorganize the grade system into modules |
-| 23 | Separating modules into files | Split code across `lib.rs` and multiple files |
-| 24 | External crates: `Cargo.toml`, dependencies, `crates.io` | Use `rand` and `colored` crates |
-| 25 | Cargo features: `cargo build`, `cargo test`, `cargo doc`, workspaces | Write documentation comments, generate docs |
-| 26 | Input/Output: reading files, writing files, `std::fs` | Build a file-based note-taking app |
-| 27 | Command-line arguments with `std::env` and `clap` | Build a CLI tool that processes text files |
-| 28 | **Mini-project:** CLI word counter tool (like `wc`) | Counts lines, words, chars, bytes from files |
+| Day | File | Topic | Exercise / Commit |
+|-----|------|-------|-------------------|
+| 1 | `day-01-modules.ipynb` | Modules: `mod`, `pub`, `use`, module tree | Reorganize the grade system into modules |
+| 2 | `day-02-modules-in-files.ipynb` | Separating modules into files | Split code across `lib.rs` and multiple files |
+| 3 | `day-03-external-crates.ipynb` | External crates: `Cargo.toml`, dependencies, `crates.io` | Use `rand` and `colored` crates |
+| 4 | `day-04-cargo-features.ipynb` | Cargo features: `cargo build`, `cargo test`, `cargo doc`, workspaces | Write documentation comments, generate docs |
+| 5 | `day-05-file-io.ipynb` | Input/Output: reading files, writing files, `std::fs` | Build a file-based note-taking app |
+| 6 | `day-06-cli-arguments.ipynb` | Command-line arguments with `std::env` and `clap` | Build a CLI tool that processes text files |
+| 7 | `day-07-mini-project-word-counter.ipynb` | **Mini-project:** CLI word counter tool (like `wc`) | Counts lines, words, chars, bytes from files |
 
 ### 🏆 Month 1 Checkpoint
 - [ ] Comfortable with basic syntax
@@ -138,49 +139,49 @@ cargo new day-01-hello-world
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 29 | Ownership rules: each value has one owner, one owner at a time, drop | Annotated examples showing ownership transfers |
-| 30 | Move semantics: what moves, what copies, `Copy` vs `Clone` | Exercises that intentionally trigger move errors, then fix them |
-| 31 | References & borrowing: `&T` (immutable) and `&mut T` (mutable) | Refactor previous projects to use references properly |
-| 32 | Borrowing rules: multiple `&T` OR one `&mut T`, no dangling refs | Write code that violates rules, understand compiler errors |
-| 33 | Slices: `&str`, `&[T]`, string slices vs string ownership | Build a word splitter and substring finder |
-| 34 | Ownership in functions: passing and returning ownership | Function signature exercises with various ownership patterns |
-| 35 | **Mini-project:** Text analyzer — refactored to use zero unnecessary clones | Analyze text stats (most common words, sentence length, etc.) |
+| 1 | Ownership rules: each value has one owner, one owner at a time, drop | Annotated examples showing ownership transfers |
+| 2 | Move semantics: what moves, what copies, `Copy` vs `Clone` | Exercises that intentionally trigger move errors, then fix them |
+| 3 | References & borrowing: `&T` (immutable) and `&mut T` (mutable) | Refactor previous projects to use references properly |
+| 4 | Borrowing rules: multiple `&T` OR one `&mut T`, no dangling refs | Write code that violates rules, understand compiler errors |
+| 5 | Slices: `&str`, `&[T]`, string slices vs string ownership | Build a word splitter and substring finder |
+| 6 | Ownership in functions: passing and returning ownership | Function signature exercises with various ownership patterns |
+| 7 | **Mini-project:** Text analyzer — refactored to use zero unnecessary clones | Analyze text stats (most common words, sentence length, etc.) |
 
 ### Week 6: Lifetimes & Generics (Apr 12 – Apr 18)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 36 | Lifetime annotations: `'a`, why they exist, the borrow checker | Annotate functions that return references |
-| 37 | Lifetime elision rules | Identify where Rust infers lifetimes automatically |
-| 38 | Lifetimes in structs | Build structs that hold references |
-| 39 | `'static` lifetime, lifetime bounds | Understand when and why to use `'static` |
-| 40 | Generics: generic functions | Write a `largest()` function for any comparable type |
-| 41 | Generic structs and enums | Build a generic `Wrapper<T>` and `Pair<T, U>` |
-| 42 | **Mini-project:** Generic data structure — `Stack<T>` with push, pop, peek | Fully generic, tested implementation |
+| 1 | Lifetime annotations: `'a`, why they exist, the borrow checker | Annotate functions that return references |
+| 2 | Lifetime elision rules | Identify where Rust infers lifetimes automatically |
+| 3 | Lifetimes in structs | Build structs that hold references |
+| 4 | `'static` lifetime, lifetime bounds | Understand when and why to use `'static` |
+| 5 | Generics: generic functions | Write a `largest()` function for any comparable type |
+| 6 | Generic structs and enums | Build a generic `Wrapper<T>` and `Pair<T, U>` |
+| 7 | **Mini-project:** Generic data structure — `Stack<T>` with push, pop, peek | Fully generic, tested implementation |
 
 ### Week 7: Traits & Polymorphism (Apr 19 – Apr 25)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 43 | Defining and implementing traits | Create `Describable`, `Printable` traits |
-| 44 | Default implementations, trait inheritance | Extend traits with defaults |
-| 45 | Trait bounds: `fn foo<T: Display + Clone>(x: T)` | Write bounded generic functions |
-| 46 | `impl Trait` syntax (argument & return position) | Simplify function signatures |
-| 47 | Common std traits: `Display`, `Debug`, `Clone`, `PartialEq`, `From`/`Into` | Implement standard traits for your types |
-| 48 | Deriving traits: `#[derive()]` | Add derives to all previous structs |
-| 49 | **Mini-project:** Shape calculator — trait-based polymorphism | `Shape` trait with `area()` and `perimeter()` for Circle, Rectangle, Triangle |
+| 1 | Defining and implementing traits | Create `Describable`, `Printable` traits |
+| 2 | Default implementations, trait inheritance | Extend traits with defaults |
+| 3 | Trait bounds: `fn foo<T: Display + Clone>(x: T)` | Write bounded generic functions |
+| 4 | `impl Trait` syntax (argument & return position) | Simplify function signatures |
+| 5 | Common std traits: `Display`, `Debug`, `Clone`, `PartialEq`, `From`/`Into` | Implement standard traits for your types |
+| 6 | Deriving traits: `#[derive()]` | Add derives to all previous structs |
+| 7 | **Mini-project:** Shape calculator — trait-based polymorphism | `Shape` trait with `area()` and `perimeter()` for Circle, Rectangle, Triangle |
 
 ### Week 8: Error Handling Mastery (Apr 26 – May 2)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 50 | `Result<T, E>` deep dive, `unwrap()`, `expect()` | Convert panicking code to proper error handling |
-| 51 | The `?` operator, error propagation | Chain operations that may fail |
-| 52 | Custom error types | Define domain-specific error enums |
-| 53 | `thiserror` and `anyhow` crates | Refactor errors using community crates |
-| 54 | `panic!` vs recoverable errors, when to use each | Decision flowchart for error strategies |
-| 55 | Error handling in `main()`, exit codes | Build a robust CLI with proper exit codes |
-| 56 | **Mini-project:** CSV parser with comprehensive error handling | Parse CSV files, handle malformed data gracefully |
+| 1 | `Result<T, E>` deep dive, `unwrap()`, `expect()` | Convert panicking code to proper error handling |
+| 2 | The `?` operator, error propagation | Chain operations that may fail |
+| 3 | Custom error types | Define domain-specific error enums |
+| 4 | `thiserror` and `anyhow` crates | Refactor errors using community crates |
+| 5 | `panic!` vs recoverable errors, when to use each | Decision flowchart for error strategies |
+| 6 | Error handling in `main()`, exit codes | Build a robust CLI with proper exit codes |
+| 7 | **Mini-project:** CSV parser with comprehensive error handling | Parse CSV files, handle malformed data gracefully |
 
 ### 🏆 Month 2 Checkpoint
 - [ ] Can explain ownership, borrowing, and lifetimes clearly
@@ -198,49 +199,49 @@ cargo new day-01-hello-world
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 57 | Closures: syntax, capturing environment, `Fn`, `FnMut`, `FnOnce` | Write closures that capture by reference and by value |
-| 58 | Closures as function parameters and return values | Build a configurable sorter using closures |
-| 59 | Iterator trait: `next()`, consuming adaptors, iterator adaptors | Implement `Iterator` for a custom `Fibonacci` struct |
-| 60 | Advanced iterator methods: `zip`, `enumerate`, `flat_map`, `fold`, `scan` | Solve data processing challenges with iterators |
-| 61 | Chaining iterators, lazy evaluation, performance | Benchmark iterator chains vs manual loops |
-| 62 | Creating custom iterators | Build a `Range` iterator with step |
-| 63 | **Mini-project:** Data pipeline processor | Process JSON/CSV data using iterator chains |
+| 1 | Closures: syntax, capturing environment, `Fn`, `FnMut`, `FnOnce` | Write closures that capture by reference and by value |
+| 2 | Closures as function parameters and return values | Build a configurable sorter using closures |
+| 3 | Iterator trait: `next()`, consuming adaptors, iterator adaptors | Implement `Iterator` for a custom `Fibonacci` struct |
+| 4 | Advanced iterator methods: `zip`, `enumerate`, `flat_map`, `fold`, `scan` | Solve data processing challenges with iterators |
+| 5 | Chaining iterators, lazy evaluation, performance | Benchmark iterator chains vs manual loops |
+| 6 | Creating custom iterators | Build a `Range` iterator with step |
+| 7 | **Mini-project:** Data pipeline processor | Process JSON/CSV data using iterator chains |
 
 ### Week 10: Smart Pointers & Memory (May 10 – May 16)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 64 | `Box<T>`: heap allocation, recursive types | Implement a cons list and binary tree with `Box` |
-| 65 | `Deref` trait, deref coercion, `Drop` trait | Custom smart pointer implementation |
-| 66 | `Rc<T>`: reference counting, shared ownership | Model a graph with shared nodes |
-| 67 | `RefCell<T>`: interior mutability, runtime borrow checking | Build a mock object for testing |
-| 68 | `Rc<RefCell<T>>` pattern | Mutable shared state examples |
-| 69 | `Cow<T>`: clone-on-write, avoiding unnecessary allocations | Optimize string processing with `Cow` |
-| 70 | **Mini-project:** Simple linked list implementation | Singly linked list with insert, delete, search, display |
+| 1 | `Box<T>`: heap allocation, recursive types | Implement a cons list and binary tree with `Box` |
+| 2 | `Deref` trait, deref coercion, `Drop` trait | Custom smart pointer implementation |
+| 3 | `Rc<T>`: reference counting, shared ownership | Model a graph with shared nodes |
+| 4 | `RefCell<T>`: interior mutability, runtime borrow checking | Build a mock object for testing |
+| 5 | `Rc<RefCell<T>>` pattern | Mutable shared state examples |
+| 6 | `Cow<T>`: clone-on-write, avoiding unnecessary allocations | Optimize string processing with `Cow` |
+| 7 | **Mini-project:** Simple linked list implementation | Singly linked list with insert, delete, search, display |
 
 ### Week 11: Testing & Documentation (May 17 – May 23)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 71 | Unit tests: `#[test]`, `assert!`, `assert_eq!`, `assert_ne!` | Add tests to ALL previous projects |
-| 72 | Testing panics: `#[should_panic]`, testing `Result` | Test error paths |
-| 73 | Integration tests: `tests/` directory, test organization | Write integration tests for the CSV parser |
-| 74 | Test-driven development (TDD) workflow | Build a new module using TDD |
-| 75 | Documentation: `///`, `//!`, doc tests, `cargo doc` | Fully document the linked list project |
-| 76 | Benchmarking basics with `criterion` crate | Benchmark your data structures |
-| 77 | **Mini-project:** A fully tested & documented math library | Covers basic arithmetic, statistics, and linear algebra operations |
+| 1 | Unit tests: `#[test]`, `assert!`, `assert_eq!`, `assert_ne!` | Add tests to ALL previous projects |
+| 2 | Testing panics: `#[should_panic]`, testing `Result` | Test error paths |
+| 3 | Integration tests: `tests/` directory, test organization | Write integration tests for the CSV parser |
+| 4 | Test-driven development (TDD) workflow | Build a new module using TDD |
+| 5 | Documentation: `///`, `//!`, doc tests, `cargo doc` | Fully document the linked list project |
+| 6 | Benchmarking basics with `criterion` crate | Benchmark your data structures |
+| 7 | **Mini-project:** A fully tested & documented math library | Covers basic arithmetic, statistics, and linear algebra operations |
 
 ### Week 12: Idiomatic Rust & Design Patterns (May 24 – May 30)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 78 | The newtype pattern | Wrap primitives for type safety |
-| 79 | Builder pattern | Implement a builder for a complex config struct |
-| 80 | Type state pattern | Model a state machine with compile-time guarantees |
-| 81 | Using `From`/`Into` for conversions | Ergonomic type conversions across your codebase |
-| 82 | Operator overloading: `Add`, `Mul`, `Index`, etc. | Build a `Vector2D` with full operator support |
-| 83 | `PhantomData`, zero-cost abstractions | Explore advanced type-level programming |
-| 84 | **Mini-project:** Expression evaluator | Parse and evaluate mathematical expressions using Rust patterns |
+| 1 | The newtype pattern | Wrap primitives for type safety |
+| 2 | Builder pattern | Implement a builder for a complex config struct |
+| 3 | Type state pattern | Model a state machine with compile-time guarantees |
+| 4 | Using `From`/`Into` for conversions | Ergonomic type conversions across your codebase |
+| 5 | Operator overloading: `Add`, `Mul`, `Index`, etc. | Build a `Vector2D` with full operator support |
+| 6 | `PhantomData`, zero-cost abstractions | Explore advanced type-level programming |
+| 7 | **Mini-project:** Expression evaluator | Parse and evaluate mathematical expressions using Rust patterns |
 
 ### 🏆 Month 3 Checkpoint
 - [ ] Closures and iterators feel natural
@@ -258,49 +259,49 @@ cargo new day-01-hello-world
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 85 | Threads: `std::thread::spawn`, `join`, move closures | Parallel number crunching |
-| 86 | Message passing: `mpsc` channels | Producer-consumer pattern |
-| 87 | Shared state: `Mutex<T>`, `Arc<T>` | Thread-safe counter, shared data |
-| 88 | `Arc<Mutex<T>>` pattern, deadlock prevention | Multi-threaded bank account simulation |
-| 89 | `Rayon` crate: parallel iterators | Parallelize data processing from Month 3 |
-| 90 | Atomic types: `AtomicBool`, `AtomicUsize`, `Ordering` | Lock-free shared counter |
-| 91 | **Mini-project:** Multi-threaded web scraper skeleton | Concurrent URL fetcher using threads + channels |
+| 1 | Threads: `std::thread::spawn`, `join`, move closures | Parallel number crunching |
+| 2 | Message passing: `mpsc` channels | Producer-consumer pattern |
+| 3 | Shared state: `Mutex<T>`, `Arc<T>` | Thread-safe counter, shared data |
+| 4 | `Arc<Mutex<T>>` pattern, deadlock prevention | Multi-threaded bank account simulation |
+| 5 | `Rayon` crate: parallel iterators | Parallelize data processing from Month 3 |
+| 6 | Atomic types: `AtomicBool`, `AtomicUsize`, `Ordering` | Lock-free shared counter |
+| 7 | **Mini-project:** Multi-threaded web scraper skeleton | Concurrent URL fetcher using threads + channels |
 
 ### Week 14: Async/Await (Jun 8 – Jun 14)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 92 | Async concepts: futures, `.await`, `async fn` | Simple async functions with `tokio` |
-| 93 | Tokio runtime: `#[tokio::main]`, spawning tasks | Run concurrent async tasks |
-| 94 | Async I/O: reading/writing files asynchronously | Async file processor |
-| 95 | `tokio::select!`, `tokio::join!`, timeouts | Handle multiple async operations |
-| 96 | Async channels: `tokio::sync::mpsc`, `broadcast`, `watch` | Async message passing patterns |
-| 97 | Streams: `tokio_stream`, async iterators | Process streaming data |
-| 98 | **Mini-project:** Async chat server (TCP) | Multi-client chat using `tokio` |
+| 1 | Async concepts: futures, `.await`, `async fn` | Simple async functions with `tokio` |
+| 2 | Tokio runtime: `#[tokio::main]`, spawning tasks | Run concurrent async tasks |
+| 3 | Async I/O: reading/writing files asynchronously | Async file processor |
+| 4 | `tokio::select!`, `tokio::join!`, timeouts | Handle multiple async operations |
+| 5 | Async channels: `tokio::sync::mpsc`, `broadcast`, `watch` | Async message passing patterns |
+| 6 | Streams: `tokio_stream`, async iterators | Process streaming data |
+| 7 | **Mini-project:** Async chat server (TCP) | Multi-client chat using `tokio` |
 
 ### Week 15: HTTP & Web (Jun 15 – Jun 21)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 99 | HTTP client: `reqwest` crate, GET/POST requests | Fetch data from public APIs |
-| 100 | JSON: `serde` and `serde_json`, serializing/deserializing | Parse API responses into structs |
-| 101 | Intro to `Actix-web` or `Axum`: hello world, routing | First web server |
-| 102 | Request handling: path params, query params, JSON bodies | CRUD endpoint handlers |
-| 103 | Middleware, extractors, shared state in web frameworks | Add logging middleware and shared state |
-| 104 | Serving static files, HTML templates with `askama` or `tera` | Render dynamic HTML pages |
-| 105 | **Mini-project:** REST API — bookmark manager | Full CRUD API with JSON persistence |
+| 1 | HTTP client: `reqwest` crate, GET/POST requests | Fetch data from public APIs |
+| 2 | JSON: `serde` and `serde_json`, serializing/deserializing | Parse API responses into structs |
+| 3 | Intro to `Actix-web` or `Axum`: hello world, routing | First web server |
+| 4 | Request handling: path params, query params, JSON bodies | CRUD endpoint handlers |
+| 5 | Middleware, extractors, shared state in web frameworks | Add logging middleware and shared state |
+| 6 | Serving static files, HTML templates with `askama` or `tera` | Render dynamic HTML pages |
+| 7 | **Mini-project:** REST API — bookmark manager | Full CRUD API with JSON persistence |
 
 ### Week 16: Databases & Deployment (Jun 22 – Jun 28)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 106 | SQLite with `rusqlite`, database setup | Create tables, basic queries |
-| 107 | ORMs: `Diesel` or `SeaORM` introduction | Model-based database operations |
-| 108 | Migrations, connection pooling (`r2d2` or `deadpool`) | Production-ready database setup |
-| 109 | Authentication: password hashing (`argon2`), JWT (`jsonwebtoken`) | User signup/login endpoints |
-| 110 | Environment config: `dotenv`, `config` crate | 12-factor app configuration |
-| 111 | Docker: containerizing a Rust web app | Write a multi-stage `Dockerfile` |
-| 112 | **Mini-project:** Full-stack URL shortener | Web API + database + Docker |
+| 1 | SQLite with `rusqlite`, database setup | Create tables, basic queries |
+| 2 | ORMs: `Diesel` or `SeaORM` introduction | Model-based database operations |
+| 3 | Migrations, connection pooling (`r2d2` or `deadpool`) | Production-ready database setup |
+| 4 | Authentication: password hashing (`argon2`), JWT (`jsonwebtoken`) | User signup/login endpoints |
+| 5 | Environment config: `dotenv`, `config` crate | 12-factor app configuration |
+| 6 | Docker: containerizing a Rust web app | Write a multi-stage `Dockerfile` |
+| 7 | **Mini-project:** Full-stack URL shortener | Web API + database + Docker |
 
 ### 🏆 Month 4 Checkpoint
 - [ ] Can build async applications with `tokio`
@@ -318,49 +319,49 @@ cargo new day-01-hello-world
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 113 | `clap` v4 deep dive: subcommands, args, validators | Build a multi-command CLI tool |
-| 114 | Terminal UI: `crossterm`, `ratatui` | Interactive terminal dashboard |
-| 115 | Process management: `std::process::Command`, piping | Build a task runner |
-| 116 | File system operations: walking directories, `walkdir` crate | Recursive file finder (like `find`) |
-| 117 | Regular expressions: `regex` crate | Build a `grep`-like tool |
-| 118 | Serialization: `serde` with TOML, YAML, RON formats | Config file parser supporting multiple formats |
-| 119 | **Mini-project:** A personal `dev-tools` CLI | Swiss-army knife CLI with multiple subcommands |
+| 1 | `clap` v4 deep dive: subcommands, args, validators | Build a multi-command CLI tool |
+| 2 | Terminal UI: `crossterm`, `ratatui` | Interactive terminal dashboard |
+| 3 | Process management: `std::process::Command`, piping | Build a task runner |
+| 4 | File system operations: walking directories, `walkdir` crate | Recursive file finder (like `find`) |
+| 5 | Regular expressions: `regex` crate | Build a `grep`-like tool |
+| 6 | Serialization: `serde` with TOML, YAML, RON formats | Config file parser supporting multiple formats |
+| 7 | **Mini-project:** A personal `dev-tools` CLI | Swiss-army knife CLI with multiple subcommands |
 
 ### Week 18: Macros (Jul 8 – Jul 14)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 120 | Declarative macros: `macro_rules!` basics | Write `vec!`-like macros |
-| 121 | Advanced `macro_rules!`: repetition, nested macros, TT munchers | Build a `hashmap!` macro |
-| 122 | Debugging macros: `cargo expand`, tracing macro expansion | Debug and understand existing macros |
-| 123 | Procedural macros: intro, types (derive, attribute, function-like) | Setup a proc-macro crate |
-| 124 | Derive macros with `syn` and `quote` | Auto-derive a custom trait |
-| 125 | Attribute macros | Build a `#[route]` macro for your web framework |
-| 126 | **Mini-project:** Testing framework macro | `#[my_test]` macro that adds setup/teardown |
+| 1 | Declarative macros: `macro_rules!` basics | Write `vec!`-like macros |
+| 2 | Advanced `macro_rules!`: repetition, nested macros, TT munchers | Build a `hashmap!` macro |
+| 3 | Debugging macros: `cargo expand`, tracing macro expansion | Debug and understand existing macros |
+| 4 | Procedural macros: intro, types (derive, attribute, function-like) | Setup a proc-macro crate |
+| 5 | Derive macros with `syn` and `quote` | Auto-derive a custom trait |
+| 6 | Attribute macros | Build a `#[route]` macro for your web framework |
+| 7 | **Mini-project:** Testing framework macro | `#[my_test]` macro that adds setup/teardown |
 
 ### Week 19: Unsafe Rust & FFI (Jul 15 – Jul 21)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 127 | Unsafe Rust: raw pointers, `unsafe` blocks, when to use | Explore what unsafe allows |
-| 128 | Unsafe functions, unsafe traits | Write safe wrappers around unsafe code |
-| 129 | FFI basics: calling C from Rust (`extern "C"`) | Link to a C library |
-| 130 | FFI: exposing Rust to C, `#[no_mangle]`, `cbindgen` | Create a Rust library callable from C |
-| 131 | `bindgen`: auto-generating Rust bindings from C headers | Bind to a real C library |
-| 132 | Memory layout: `repr(C)`, alignment, `size_of`, `align_of` | Understand and control memory layout |
-| 133 | **Mini-project:** Safe wrapper around a C library | Ergonomic Rust API over a C dependency |
+| 1 | Unsafe Rust: raw pointers, `unsafe` blocks, when to use | Explore what unsafe allows |
+| 2 | Unsafe functions, unsafe traits | Write safe wrappers around unsafe code |
+| 3 | FFI basics: calling C from Rust (`extern "C"`) | Link to a C library |
+| 4 | FFI: exposing Rust to C, `#[no_mangle]`, `cbindgen` | Create a Rust library callable from C |
+| 5 | `bindgen`: auto-generating Rust bindings from C headers | Bind to a real C library |
+| 6 | Memory layout: `repr(C)`, alignment, `size_of`, `align_of` | Understand and control memory layout |
+| 7 | **Mini-project:** Safe wrapper around a C library | Ergonomic Rust API over a C dependency |
 
 ### Week 20: Performance & Optimization (Jul 22 – Jul 28)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 134 | Profiling: `perf`, `flamegraph`, `cargo-flamegraph` | Profile a previous project |
-| 135 | Benchmarking: `criterion` deep dive, statistical benchmarks | Benchmark critical paths |
-| 136 | Memory optimization: reducing allocations, `SmallVec`, `ArrayVec` | Optimize hot paths |
-| 137 | SIMD: `std::simd` (nightly) or `packed_simd` | Vectorize a computation |
-| 138 | Compile-time optimization: `const fn`, `const` generics | Move computation to compile-time |
-| 139 | Link-time optimization (LTO), `codegen-units`, binary size | Shrink and speed up release builds |
-| 140 | **Mini-project:** High-performance log parser | Parse gigabytes of logs efficiently |
+| 1 | Profiling: `perf`, `flamegraph`, `cargo-flamegraph` | Profile a previous project |
+| 2 | Benchmarking: `criterion` deep dive, statistical benchmarks | Benchmark critical paths |
+| 3 | Memory optimization: reducing allocations, `SmallVec`, `ArrayVec` | Optimize hot paths |
+| 4 | SIMD: `std::simd` (nightly) or `packed_simd` | Vectorize a computation |
+| 5 | Compile-time optimization: `const fn`, `const` generics | Move computation to compile-time |
+| 6 | Link-time optimization (LTO), `codegen-units`, binary size | Shrink and speed up release builds |
+| 7 | **Mini-project:** High-performance log parser | Parse gigabytes of logs efficiently |
 
 ### 🏆 Month 5 Checkpoint
 - [ ] Can write and debug macros
@@ -378,49 +379,49 @@ cargo new day-01-hello-world
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 141 | Choose your capstone project (see ideas below) | Write a design document in `DESIGN.md` |
-| 142 | Architecture: modules, crate structure, dependency planning | Create project skeleton with module stubs |
-| 143 | Set up CI/CD: GitHub Actions for Rust (test, lint, format) | `.github/workflows/rust.yml` |
-| 144 | Set up `clippy` lints, `rustfmt` config | Add `clippy.toml`, `rustfmt.toml` |
-| 145 | Core data models and traits | Implement foundation types |
-| 146 | Core logic — part 1 | Start implementing main functionality |
-| 147 | Core logic — part 2 | Continue implementation |
+| 1 | Choose your capstone project (see ideas below) | Write a design document in `DESIGN.md` |
+| 2 | Architecture: modules, crate structure, dependency planning | Create project skeleton with module stubs |
+| 3 | Set up CI/CD: GitHub Actions for Rust (test, lint, format) | `.github/workflows/rust.yml` |
+| 4 | Set up `clippy` lints, `rustfmt` config | Add `clippy.toml`, `rustfmt.toml` |
+| 5 | Core data models and traits | Implement foundation types |
+| 6 | Core logic — part 1 | Start implementing main functionality |
+| 7 | Core logic — part 2 | Continue implementation |
 
 ### Week 22: Capstone — Build Phase (Aug 8 – Aug 14)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 148 | Feature development | Implement major feature 1 |
-| 149 | Feature development | Implement major feature 2 |
-| 150 | Feature development | Implement major feature 3 |
-| 151 | Error handling & edge cases | Robust error handling throughout |
-| 152 | Testing: unit + integration tests | Achieve >80% code coverage |
-| 153 | CLI or API interface | User-facing interface |
-| 154 | Performance tuning | Profile and optimize |
+| 1 | Feature development | Implement major feature 1 |
+| 2 | Feature development | Implement major feature 2 |
+| 3 | Feature development | Implement major feature 3 |
+| 4 | Error handling & edge cases | Robust error handling throughout |
+| 5 | Testing: unit + integration tests | Achieve >80% code coverage |
+| 6 | CLI or API interface | User-facing interface |
+| 7 | Performance tuning | Profile and optimize |
 
 ### Week 23: Capstone — Polish & Open Source (Aug 15 – Aug 21)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 155 | Documentation: README, API docs, examples | Comprehensive documentation |
-| 156 | Publishing to `crates.io` (optional) | `cargo publish` workflow |
-| 157 | Open source contribution: find a Rust project, read issues | Identify a good first issue |
-| 158 | Open source: fork, fix, submit PR | Make your first Rust open source contribution |
-| 159 | Code review: review your own Month 1 code with fresh eyes | Refactor early code using everything you've learned |
-| 160 | Write a blog post or tutorial about your Rust journey | Share your knowledge |
-| 161 | **Capstone v1.0 release** | Tag a release on GitHub |
+| 1 | Documentation: README, API docs, examples | Comprehensive documentation |
+| 2 | Publishing to `crates.io` (optional) | `cargo publish` workflow |
+| 3 | Open source contribution: find a Rust project, read issues | Identify a good first issue |
+| 4 | Open source: fork, fix, submit PR | Make your first Rust open source contribution |
+| 5 | Code review: review your own Month 1 code with fresh eyes | Refactor early code using everything you've learned |
+| 6 | Write a blog post or tutorial about your Rust journey | Share your knowledge |
+| 7 | **Capstone v1.0 release** | Tag a release on GitHub |
 
 ### Week 24: Advanced Topics & Beyond (Aug 22 – Aug 31)
 
 | Day | Topic | Exercise / Commit |
 |-----|-------|-------------------|
-| 162 | Explore WebAssembly (WASM) with Rust | Compile a Rust module to WASM |
-| 163 | Embedded Rust: `no_std`, `embedded-hal` concepts | Explore bare-metal Rust (simulator if no hardware) |
-| 164 | Advanced type system: GATs, higher-kinded types, type-level programming | Mind-bending type exercises |
-| 165 | Async traits, `Tower` service abstraction | Build composable middleware |
-| 166 | Review and organize your entire repository | Clean up, tag, document everything |
-| 167 | Create a "What I Learned" summary document | `LEARNINGS.md` — your Rust knowledge base |
-| 168 | **Celebrate! 🎉** | Reflect on 6 months of growth |
+| 1 | Explore WebAssembly (WASM) with Rust | Compile a Rust module to WASM |
+| 2 | Embedded Rust: `no_std`, `embedded-hal` concepts | Explore bare-metal Rust (simulator if no hardware) |
+| 3 | Advanced type system: GATs, higher-kinded types, type-level programming | Mind-bending type exercises |
+| 4 | Async traits, `Tower` service abstraction | Build composable middleware |
+| 5 | Review and organize your entire repository | Clean up, tag, document everything |
+| 6 | Create a "What I Learned" summary document | `LEARNINGS.md` — your Rust knowledge base |
+| 7 | **Celebrate! 🎉** | Reflect on 6 months of growth |
 
 ---
 
