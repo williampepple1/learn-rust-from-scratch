@@ -137,51 +137,51 @@ cargo new day-07-mini-project
 
 ### Week 5: Ownership Deep Dive (Apr 5 – Apr 11)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | Ownership rules: each value has one owner, one owner at a time, drop | Annotated examples showing ownership transfers |
-| 2 | Move semantics: what moves, what copies, `Copy` vs `Clone` | Exercises that intentionally trigger move errors, then fix them |
-| 3 | References & borrowing: `&T` (immutable) and `&mut T` (mutable) | Refactor previous projects to use references properly |
-| 4 | Borrowing rules: multiple `&T` OR one `&mut T`, no dangling refs | Write code that violates rules, understand compiler errors |
-| 5 | Slices: `&str`, `&[T]`, string slices vs string ownership | Build a word splitter and substring finder |
-| 6 | Ownership in functions: passing and returning ownership | Function signature exercises with various ownership patterns |
-| 7 | **Mini-project:** Text analyzer — refactored to use zero unnecessary clones | Analyze text stats (most common words, sentence length, etc.) |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | Ownership rules: each value has one owner, one owner at a time, drop | `day-01-ownership-rules.ipynb` | Annotated examples showing ownership transfers |
+| 2 | Move semantics: what moves, what copies, `Copy` vs `Clone` | `day-02-move-semantics.ipynb` | Exercises that intentionally trigger move errors, then fix them |
+| 3 | References & borrowing: `&T` (immutable) and `&mut T` (mutable) | `day-03-references-borrowing.ipynb` | Refactor previous projects to use references properly |
+| 4 | Borrowing rules: multiple `&T` OR one `&mut T`, no dangling refs | `day-04-borrowing-rules.ipynb` | Write code that violates rules, understand compiler errors |
+| 5 | Slices: `&str`, `&[T]`, string slices vs string ownership | `day-05-slices.ipynb` | Build a word splitter and substring finder |
+| 6 | Ownership in functions: passing and returning ownership | `day-06-ownership-in-functions.ipynb` | Function signature exercises with various ownership patterns |
+| 7 | **Mini-project:** Text analyzer — refactored to use zero unnecessary clones | `day-07-mini-project-text-analyzer.ipynb` | Analyze text stats (most common words, sentence length, etc.) |
 
 ### Week 6: Lifetimes & Generics (Apr 12 – Apr 18)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | Lifetime annotations: `'a`, why they exist, the borrow checker | Annotate functions that return references |
-| 2 | Lifetime elision rules | Identify where Rust infers lifetimes automatically |
-| 3 | Lifetimes in structs | Build structs that hold references |
-| 4 | `'static` lifetime, lifetime bounds | Understand when and why to use `'static` |
-| 5 | Generics: generic functions | Write a `largest()` function for any comparable type |
-| 6 | Generic structs and enums | Build a generic `Wrapper<T>` and `Pair<T, U>` |
-| 7 | **Mini-project:** Generic data structure — `Stack<T>` with push, pop, peek | Fully generic, tested implementation |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | Lifetime annotations: `'a`, why they exist, the borrow checker | `day-01-lifetime-annotations.ipynb` | Annotate functions that return references |
+| 2 | Lifetime elision rules | `day-02-lifetime-elision.ipynb` | Identify where Rust infers lifetimes automatically |
+| 3 | Lifetimes in structs | `day-03-lifetimes-in-structs.ipynb` | Build structs that hold references |
+| 4 | `'static` lifetime, lifetime bounds | `day-04-static-lifetime.ipynb` | Understand when and why to use `'static` |
+| 5 | Generics: generic functions | `day-05-generics.ipynb` | Write a `largest()` function for any comparable type |
+| 6 | Generic structs and enums | `day-06-generic-structs-enums.ipynb` | Build a generic `Wrapper<T>` and `Pair<T, U>` |
+| 7 | **Mini-project:** Generic data structure — `Stack<T>` with push, pop, peek | `day-07-mini-project-generic-stack.ipynb` | Fully generic, tested implementation |
 
 ### Week 7: Traits & Polymorphism (Apr 19 – Apr 25)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | Defining and implementing traits | Create `Describable`, `Printable` traits |
-| 2 | Default implementations, trait inheritance | Extend traits with defaults |
-| 3 | Trait bounds: `fn foo<T: Display + Clone>(x: T)` | Write bounded generic functions |
-| 4 | `impl Trait` syntax (argument & return position) | Simplify function signatures |
-| 5 | Common std traits: `Display`, `Debug`, `Clone`, `PartialEq`, `From`/`Into` | Implement standard traits for your types |
-| 6 | Deriving traits: `#[derive()]` | Add derives to all previous structs |
-| 7 | **Mini-project:** Shape calculator — trait-based polymorphism | `Shape` trait with `area()` and `perimeter()` for Circle, Rectangle, Triangle |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | Defining and implementing traits | `day-01-traits.ipynb` | Create `Describable`, `Printable` traits |
+| 2 | Default implementations, trait inheritance | `day-02-default-impls-inheritance.ipynb` | Extend traits with defaults |
+| 3 | Trait bounds: `fn foo<T: Display + Clone>(x: T)` | `day-03-trait-bounds.ipynb` | Write bounded generic functions |
+| 4 | `impl Trait` syntax (argument & return position) | `day-04-impl-trait.ipynb` | Simplify function signatures |
+| 5 | Common std traits: `Display`, `Debug`, `Clone`, `PartialEq`, `From`/`Into` | `day-05-common-traits.ipynb` | Implement standard traits for your types |
+| 6 | Deriving traits: `#[derive()]` | `day-06-deriving-traits.ipynb` | Add derives to all previous structs |
+| 7 | **Mini-project:** Shape calculator — trait-based polymorphism | `day-07-mini-project-shape-calculator.ipynb` | `Shape` trait with `area()` and `perimeter()` for Circle, Rectangle, Triangle |
 
 ### Week 8: Error Handling Mastery (Apr 26 – May 2)
 
-| Day | Topic | Exercise / Commit |
-|-----|-------|-------------------|
-| 1 | `Result<T, E>` deep dive, `unwrap()`, `expect()` | Convert panicking code to proper error handling |
-| 2 | The `?` operator, error propagation | Chain operations that may fail |
-| 3 | Custom error types | Define domain-specific error enums |
-| 4 | `thiserror` and `anyhow` crates | Refactor errors using community crates |
-| 5 | `panic!` vs recoverable errors, when to use each | Decision flowchart for error strategies |
-| 6 | Error handling in `main()`, exit codes | Build a robust CLI with proper exit codes |
-| 7 | **Mini-project:** CSV parser with comprehensive error handling | Parse CSV files, handle malformed data gracefully |
+| Day | Topic | File | Exercise / Commit |
+|-----|-------|------|-------------------|
+| 1 | `Result<T, E>` deep dive, `unwrap()`, `expect()` | `day-01-result-deep-dive.ipynb` | Convert panicking code to proper error handling |
+| 2 | The `?` operator, error propagation | `day-02-question-mark-operator.ipynb` | Chain operations that may fail |
+| 3 | Custom error types | `day-03-custom-error-types.ipynb` | Define domain-specific error enums |
+| 4 | `thiserror` and `anyhow` crates | `day-04-thiserror-anyhow.ipynb` | Refactor errors using community crates |
+| 5 | `panic!` vs recoverable errors, when to use each | `day-05-panic-vs-result.ipynb` | Decision flowchart for error strategies |
+| 6 | Error handling in `main()`, exit codes | `day-06-error-handling-in-main.ipynb` | Build a robust CLI with proper exit codes |
+| 7 | **Mini-project:** CSV parser with comprehensive error handling | `day-07-mini-project-csv-parser.ipynb` | Parse CSV files, handle malformed data gracefully |
 
 ### 🏆 Month 2 Checkpoint
 - [ ] Can explain ownership, borrowing, and lifetimes clearly
