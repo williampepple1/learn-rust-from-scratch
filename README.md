@@ -64,6 +64,23 @@ learn-rust-from-scratch/
 ```
 
 Each day is a Jupyter Notebook (`.ipynb`) using the EvCxR Rust kernel.
+
+### Environment Setup (EvCxR Kernel)
+To run the `.ipynb` files, you need to install the **EvCxR Jupyter Kernel**:
+
+1. **Install CMake:** EvCxR requires CMake. If you don't have it on Windows, install it via winget:
+   ```cmd
+   winget install -e --id Kitware.CMake
+   ```
+2. **Install the Kernel:** Open your terminal and install via Cargo:
+   ```cmd
+   cargo install evcxr_jupyter
+   ```
+3. **Register with Jupyter:** Register the Rust kernel so Jupyter can find it:
+   ```cmd
+   evcxr_jupyter --install
+   ```
+*(Note: If you use VS Code, make sure you have the official "Jupyter" extension installed).*
 For standalone projects, create a Cargo project:
 ```bash
 cargo new day-07-mini-project
