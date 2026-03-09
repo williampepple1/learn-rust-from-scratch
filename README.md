@@ -1,6 +1,6 @@
 # 🦀 Learn Rust from Scratch — 6-Month Mastery Plan
 
-A comprehensive 6-month curriculum to learn Rust from scratch, featuring **interactive Jupyter notebooks** for every lesson, hands-on mini-projects each week, and a companion **[quiz website with 500 MCQ interview questions](https://your-username.github.io/learn-rust-from-scratch/)** to test your knowledge.
+A comprehensive 6-month curriculum to learn Rust from scratch, featuring **interactive Jupyter notebooks** for every lesson, hands-on mini-projects each week, and a companion **[quiz website with 1000 MCQ interview questions](https://your-username.github.io/learn-rust-from-scratch/)** to test your knowledge.
 
 > **Start Date:** March 8, 2026  
 > **End Date:** August 31, 2026  
@@ -14,7 +14,7 @@ A comprehensive 6-month curriculum to learn Rust from scratch, featuring **inter
 - 📅 **6 months** of structured, day-by-day learning (168 notebook lessons)
 - 📓 **Interactive Jupyter Notebooks** using the [EvCxR Rust kernel](https://github.com/evcxr/evcxr) — run code inline
 - 🛠️ **24 mini-projects** including a calculator, URL shortener, log parser, and a key-value database
-- 🎯 **[500 MCQ Quiz Website](https://williampepple1.github.io/learn-rust-from-scratch/)** — pick 10, 20, 30, 50, or 100 random questions per topic, with instant feedback, scoring, and dark/light theme
+- 🎯 **[1000 MCQ Quiz Website](https://williampepple1.github.io/learn-rust-from-scratch/)** — pick 10, 20, 30, 50, or 100 random questions per topic, with instant feedback, scoring, and dark/light theme
 - 🧪 Topics span from "Hello, World!" to async/await, macros, unsafe Rust, FFI, and WASM
 
 ---
@@ -30,7 +30,7 @@ A comprehensive 6-month curriculum to learn Rust from scratch, featuring **inter
 - [Month 4 — Async, Networking & Web](#-month-4--async-networking--web-june-8--july-7)
 - [Month 5 — Systems Programming & Advanced Topics](#-month-5--systems-programming--advanced-topics-july-8--august-7)
 - [Month 6 — Capstone & Mastery](#-month-6--capstone--mastery-august-8--august-31)
-- [500 Interview Questions Quiz](#-500-interview-questions-quiz)
+- [1000 Interview Questions Quiz](#-1000-interview-questions-quiz)
 - [Daily Commit Strategy](#-daily-commit-strategy)
 - [Recommended Resources](#-recommended-resources)
 - [Progress Tracker](#-progress-tracker)
@@ -62,7 +62,7 @@ learn-rust-from-scratch/
 ├── build_quiz.py                # Parses .ipynb MCQs → quiz-data.js
 ├── docs/
 │   ├── index.html               # Quiz website (single-page app)
-│   └── quiz-data.js             # Generated quiz data (500 questions)
+│   └── quiz-data.js             # Generated quiz data (1000 questions)
 ├── month-01-foundations/
 │   ├── week-01/
 │   │   ├── day-01-hello-world.ipynb
@@ -78,11 +78,16 @@ learn-rust-from-scratch/
 ├── month-05-systems/
 ├── month-06-capstone/
 └── resources/
-    ├── rust-interview-mcq-part1.ipynb   # Q1–Q100: Basics & Syntax
-    ├── rust-interview-mcq-part2.ipynb   # Q101–Q200: Ownership & Lifetimes
-    ├── rust-interview-mcq-part3.ipynb   # Q201–Q300: Traits & Error Handling
-    ├── rust-interview-mcq-part4.ipynb   # Q301–Q400: Concurrency & Async
-    └── rust-interview-mcq-part5.ipynb   # Q401–Q500: Ecosystem & Mixed
+    ├── rust-interview-mcq-part1.ipynb    # Q1–Q100: Basics & Syntax
+    ├── rust-interview-mcq-part2.ipynb    # Q101–Q200: Ownership & Lifetimes
+    ├── rust-interview-mcq-part3.ipynb    # Q201–Q300: Traits & Error Handling
+    ├── rust-interview-mcq-part4.ipynb    # Q301–Q400: Concurrency & Async
+    ├── rust-interview-mcq-part5.ipynb    # Q401–Q500: Ecosystem & Mixed
+    ├── rust-interview-mcq-part6.ipynb    # Q501–Q600: Advanced Ownership & Memory
+    ├── rust-interview-mcq-part7.ipynb    # Q601–Q700: Closures & Iterators
+    ├── rust-interview-mcq-part8.ipynb    # Q701–Q800: Async, Futures & Tokio
+    ├── rust-interview-mcq-part9.ipynb    # Q801–Q900: Macros, Unsafe & FFI
+    └── rust-interview-mcq-part10.ipynb   # Q901–Q1000: Patterns, Testing & Ecosystem
 ```
 
 Each day is a Jupyter Notebook (`.ipynb`) using the EvCxR Rust kernel.
@@ -481,9 +486,9 @@ Choose one (or combine ideas):
 
 ---
 
-## 🎯 500 Interview Questions Quiz
+## 🎯 1000 Interview Questions Quiz
 
-This repo includes a **companion quiz website** with 500 multiple-choice questions covering all major Rust topics. The quiz is built as a static site and can be hosted for free on GitHub Pages.
+This repo includes a **companion quiz website** with 1000 multiple-choice questions covering all major Rust topics. The quiz is built as a static site and can be hosted for free on GitHub Pages.
 
 ### Topics Covered
 
@@ -494,6 +499,11 @@ This repo includes a **companion quiz website** with 500 multiple-choice questio
 | 3 | Traits, Generics & Error Handling | Q201–Q300 |
 | 4 | Concurrency, Async & Advanced | Q301–Q400 |
 | 5 | Ecosystem, Web, Systems & Mixed | Q401–Q500 |
+| 6 | Advanced Ownership & Memory | Q501–Q600 |
+| 7 | Closures, Iterators & Functional Patterns | Q601–Q700 |
+| 8 | Async, Futures & Tokio | Q701–Q800 |
+| 9 | Macros, Unsafe & FFI | Q801–Q900 |
+| 10 | Design Patterns, Testing & Ecosystem | Q901–Q1000 |
 
 ### Features
 

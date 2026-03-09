@@ -11,6 +11,11 @@ PARTS = [
     {"file": "rust-interview-mcq-part3.ipynb", "title": "Traits, Generics & Error Handling", "range": "Q201–Q300"},
     {"file": "rust-interview-mcq-part4.ipynb", "title": "Concurrency, Async & Advanced", "range": "Q301–Q400"},
     {"file": "rust-interview-mcq-part5.ipynb", "title": "Ecosystem, Web, Systems & Mixed", "range": "Q401–Q500"},
+    {"file": "rust-interview-mcq-part6.ipynb", "title": "Advanced Ownership & Memory", "range": "Q501–Q600"},
+    {"file": "rust-interview-mcq-part7.ipynb", "title": "Closures, Iterators & Functional Patterns", "range": "Q601–Q700"},
+    {"file": "rust-interview-mcq-part8.ipynb", "title": "Async, Futures & Tokio", "range": "Q701–Q800"},
+    {"file": "rust-interview-mcq-part9.ipynb", "title": "Macros, Unsafe & FFI", "range": "Q801–Q900"},
+    {"file": "rust-interview-mcq-part10.ipynb", "title": "Design Patterns, Testing & Ecosystem", "range": "Q901–Q1000"},
 ]
 
 def parse_question_cell(source_text, part_index):

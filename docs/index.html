@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rust Interview MCQ — 500 Questions</title>
+<title>Rust Interview MCQ — 1000 Questions</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -172,7 +172,7 @@ a:hover{color:var(--rust-light)}
 <main class="container" id="app"></main>
 
 <footer class="footer">
-  Built for <strong>learn-rust-from-scratch</strong> — 500 interview questions to master Rust.
+  Built for <strong>learn-rust-from-scratch</strong> — 1000 interview questions to master Rust.
 </footer>
 
 <script src="quiz-data.js"></script>
@@ -340,10 +340,10 @@ function showLanding(){
   app.innerHTML=`
     <div class="landing-hero">
       <h1>🦀 <span>Rust</span> Interview Quiz</h1>
-      <p>500 multiple-choice questions to test your Rust knowledge</p>
+      <p>1000 multiple-choice questions to test your Rust knowledge</p>
       <div class="stats-row">
-        <div class="stat"><div class="stat-num">500</div><div class="stat-label">Questions</div></div>
-        <div class="stat"><div class="stat-num">5</div><div class="stat-label">Topics</div></div>
+        <div class="stat"><div class="stat-num">1000</div><div class="stat-label">Questions</div></div>
+        <div class="stat"><div class="stat-num">10</div><div class="stat-label">Topics</div></div>
         <div class="stat"><div class="stat-num">${allStats.answered}</div><div class="stat-label">Answered</div></div>
         <div class="stat"><div class="stat-num">${allStats.answered>0?Math.round(allStats.correct/allStats.answered*100):0}%</div><div class="stat-label">Accuracy</div></div>
       </div>
@@ -351,7 +351,7 @@ function showLanding(){
     <div class="parts-grid">${cardsHTML}</div>
     <div style="text-align:center">
       <button class="start-all" onclick="openPart(1)">Start Quiz &rarr;</button>
-      ${allStats.answered>0?`<br><button class="nav-btn" style="margin-top:12px" onclick="resetAll()">Reset All Progress</button>`:''}
+      <br><button class="nav-btn" style="margin-top:12px" onclick="resetAll()">Reset All Progress</button>
     </div>`;
 }
 
@@ -424,7 +424,10 @@ function renderQuiz(){
     </div>
     <div class="nav-bar">
       <button class="nav-btn" onclick="prevQ()" ${idx===0?'disabled':''}>&#8592; Previous</button>
-      <button class="nav-btn" onclick="showLanding()">All Quizzes</button>
+      <div style="display:flex;gap:8px">
+        <button class="nav-btn" onclick="quitQuiz()" title="Reset this quiz and go home">Reset &amp; Quit</button>
+        <button class="nav-btn" onclick="showLanding()">Home</button>
+      </div>
       ${allDone && idx===qs.length-1
         ?`<button class="nav-btn primary" onclick="showResults()">See Results &rarr;</button>`
         :`<button class="nav-btn primary" onclick="nextQ()" ${idx===qs.length-1?'disabled':''}>Next &rarr;</button>`}
@@ -498,8 +501,20 @@ window.reviewQuiz = function(){
   saveState();
   renderQuiz();
 };
+window.quitQuiz = function(){
+  if(!confirm('Reset this quiz session and go back to home?')) return;
+  if(state.sessionIds){
+    state.sessionIds.forEach(id=>delete state.answers[id]);
+  }
+  state.currentPart=null;
+  state.sessionIds=null;
+  state.sessionLabel=null;
+  state.currentIndex=0;
+  saveState();
+  showLanding();
+};
 window.resetAll = function(){
-  if(!confirm('Reset all progress? This cannot be undone.')) return;
+  if(!confirm('Reset ALL progress across every quiz? This cannot be undone.')) return;
   state.answers={};
   saveState();
   showLanding();
