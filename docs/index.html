@@ -210,7 +210,7 @@ a:hover{color:var(--rust-light)}
 <body>
 
 <header class="header">
-  <div class="header-left" onclick="showLanding()">
+  <div class="header-left" onclick="goHome()">
     <span class="logo">🦀</span>
     <div class="header-title"><span>Rust</span> Learn & Quiz</div>
   </div>
@@ -402,6 +402,10 @@ function renderGuideMarkdown(text){
 }
 
 /* ========== TAB SWITCHING ========== */
+window.goHome = function(){
+  switchTab('learn');
+};
+
 window.switchTab = function(tab){
   currentTab = tab;
   $('#tabLearn').classList.toggle('active', tab==='learn');
