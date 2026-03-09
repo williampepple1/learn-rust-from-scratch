@@ -13,6 +13,7 @@ A comprehensive 6-month curriculum to learn Rust from scratch, featuring **inter
 
 - 📅 **6 months** of structured, day-by-day learning (168 notebook lessons)
 - 📓 **Interactive Jupyter Notebooks** using the [EvCxR Rust kernel](https://github.com/evcxr/evcxr) — run code inline
+- 📝 **500 hands-on exercises** with auto-grading — write code, run tests, get instant feedback
 - 🛠️ **24 mini-projects** including a calculator, URL shortener, log parser, and a key-value database
 - 🎯 **[1000 MCQ Quiz Website](https://williampepple1.github.io/learn-rust-from-scratch/)** — pick 10, 20, 30, 50, or 100 random questions per topic, with instant feedback, scoring, and dark/light theme
 - 📖 **15 interactive concept guides** rendered on the website — learn Rust's building blocks from variables to concurrency
@@ -32,6 +33,7 @@ A comprehensive 6-month curriculum to learn Rust from scratch, featuring **inter
 - [Month 5 — Systems Programming & Advanced Topics](#-month-5--systems-programming--advanced-topics-july-8--august-7)
 - [Month 6 — Capstone & Mastery](#-month-6--capstone--mastery-august-8--august-31)
 - [1000 Interview Questions Quiz](#-1000-interview-questions-quiz)
+- [500 Hands-On Exercises](#-500-hands-on-exercises)
 - [Daily Commit Strategy](#-daily-commit-strategy)
 - [Recommended Resources](#-recommended-resources)
 - [Progress Tracker](#-progress-tracker)
@@ -81,6 +83,17 @@ learn-rust-from-scratch/
 ├── month-05-systems/
 ├── month-06-capstone/
 └── resources/
+    ├── exercises/                        # 500 auto-graded exercises
+    │   ├── exercises-part1-basics.ipynb         # E1-E50
+    │   ├── exercises-part2-ownership.ipynb      # E51-E100
+    │   ├── exercises-part3-structs-enums.ipynb  # E101-E150
+    │   ├── exercises-part4-traits.ipynb         # E151-E200
+    │   ├── exercises-part5-collections.ipynb    # E201-E250
+    │   ├── exercises-part6-error-handling.ipynb # E251-E300
+    │   ├── exercises-part7-generics-closures.ipynb  # E301-E350
+    │   ├── exercises-part8-iterators.ipynb      # E351-E400
+    │   ├── exercises-part9-modules-testing.ipynb # E401-E450
+    │   └── exercises-part10-advanced.ipynb      # E451-E500
     ├── guides/                           # 15 concept guide notebooks
     │   ├── 01-variables-and-types.ipynb
     │   ├── 02-functions.ipynb
@@ -543,6 +556,62 @@ python build_guides.py
 3. Set Source to **Deploy from a branch**
 4. Select **main** branch and **/docs** folder
 5. Save — your quiz will be live at `https://<username>.github.io/learn-rust-from-scratch/`
+
+---
+
+## 📝 500 Hands-On Exercises
+
+This repo includes **500 interactive exercises** in Jupyter notebooks with auto-grading. Write code, run the test cell, and get instant feedback!
+
+### Exercise Structure
+
+Each exercise has:
+1. **Problem description** — What you need to implement
+2. **Starter code** — A function/struct with `// YOUR CODE HERE` 
+3. **Test cell** — Validates your solution with `assert!` and prints `✅ Exercise N passed!`
+
+### Topics Covered
+
+| Part | Exercises | Topics |
+|------|-----------|--------|
+| 1 | E1–E50 | Basics (variables, types, functions, control flow) |
+| 2 | E51–E100 | Ownership & Borrowing |
+| 3 | E101–E150 | Structs & Enums |
+| 4 | E151–E200 | Traits |
+| 5 | E201–E250 | Collections (Vec, String, HashMap) |
+| 6 | E251–E300 | Error Handling (Option, Result, ?) |
+| 7 | E301–E350 | Generics & Closures |
+| 8 | E351–E400 | Iterators |
+| 9 | E401–E450 | Modules & Testing |
+| 10 | E451–E500 | Advanced (Lifetimes, Smart Pointers, Concurrency) |
+
+### How to Use
+
+1. Install the [EvCxR Jupyter kernel](https://github.com/evcxr/evcxr):
+   ```bash
+   cargo install evcxr_jupyter
+   evcxr_jupyter --install
+   ```
+
+2. Open a notebook in Jupyter or VS Code
+
+3. Implement the solution where you see `// YOUR CODE HERE`
+
+4. Run the test cell — if all assertions pass, you'll see `✅ Exercise N passed!`
+
+### Example Exercise
+
+```rust
+// Exercise: Write a function that doubles a number
+fn double(x: i32) -> i32 {
+    // YOUR CODE HERE
+}
+
+// Test cell:
+assert_eq!(double(5), 10);
+assert_eq!(double(-3), -6);
+println!("✅ Exercise 42 passed!");
+```
 
 ---
 
