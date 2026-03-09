@@ -412,6 +412,9 @@ window.switchTab = function(tab){
 
 /* ========== GUIDES ========== */
 function showGuidesList(){
+  currentTab = 'learn';
+  $('#tabLearn').classList.add('active');
+  $('#tabQuiz').classList.remove('active');
   updateHeaderScore();
   let cardsHTML = '';
   GUIDES_DATA.forEach((g,i)=>{
@@ -438,6 +441,9 @@ function showGuidesList(){
 }
 
 window.openGuide = function(index){
+  currentTab = 'learn';
+  $('#tabLearn').classList.add('active');
+  $('#tabQuiz').classList.remove('active');
   const g = GUIDES_DATA[index];
   if(!g) return;
 
