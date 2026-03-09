@@ -1,5 +1,7 @@
 # 🦀 Learn Rust from Scratch — 6-Month Mastery Plan
 
+A comprehensive 6-month curriculum to learn Rust from scratch, featuring **interactive Jupyter notebooks** for every lesson, hands-on mini-projects each week, and a companion **[quiz website with 500 MCQ interview questions](https://your-username.github.io/learn-rust-from-scratch/)** to test your knowledge.
+
 > **Start Date:** March 8, 2026  
 > **End Date:** August 31, 2026  
 > **Commitment:** Daily commits to GitHub  
@@ -7,8 +9,19 @@
 
 ---
 
+## ✨ Highlights
+
+- 📅 **6 months** of structured, day-by-day learning (168 notebook lessons)
+- 📓 **Interactive Jupyter Notebooks** using the [EvCxR Rust kernel](https://github.com/evcxr/evcxr) — run code inline
+- 🛠️ **24 mini-projects** including a calculator, URL shortener, log parser, and a key-value database
+- 🎯 **[500 MCQ Quiz Website](https://williampepple1.github.io/learn-rust-from-scratch/)** — pick 10, 20, 30, 50, or 100 random questions per topic, with instant feedback, scoring, and dark/light theme
+- 🧪 Topics span from "Hello, World!" to async/await, macros, unsafe Rust, FFI, and WASM
+
+---
+
 ## 📋 Table of Contents
 
+- [Highlights](#-highlights)
 - [Philosophy](#-philosophy)
 - [How to Use This Plan](#-how-to-use-this-plan)
 - [Month 1 — Foundations](#-month-1--foundations-march-8--april-7)
@@ -17,6 +30,7 @@
 - [Month 4 — Async, Networking & Web](#-month-4--async-networking--web-june-8--july-7)
 - [Month 5 — Systems Programming & Advanced Topics](#-month-5--systems-programming--advanced-topics-july-8--august-7)
 - [Month 6 — Capstone & Mastery](#-month-6--capstone--mastery-august-8--august-31)
+- [500 Interview Questions Quiz](#-500-interview-questions-quiz)
 - [Daily Commit Strategy](#-daily-commit-strategy)
 - [Recommended Resources](#-recommended-resources)
 - [Progress Tracker](#-progress-tracker)
@@ -44,7 +58,11 @@ Each week has:
 
 ```
 learn-rust-from-scratch/
-├── README.md                  # This file (your roadmap)
+├── README.md                    # This file (your roadmap)
+├── build_quiz.py                # Parses .ipynb MCQs → quiz-data.js
+├── docs/
+│   ├── index.html               # Quiz website (single-page app)
+│   └── quiz-data.js             # Generated quiz data (500 questions)
 ├── month-01-foundations/
 │   ├── week-01/
 │   │   ├── day-01-hello-world.ipynb
@@ -60,7 +78,11 @@ learn-rust-from-scratch/
 ├── month-05-systems/
 ├── month-06-capstone/
 └── resources/
-    └── notes.md
+    ├── rust-interview-mcq-part1.ipynb   # Q1–Q100: Basics & Syntax
+    ├── rust-interview-mcq-part2.ipynb   # Q101–Q200: Ownership & Lifetimes
+    ├── rust-interview-mcq-part3.ipynb   # Q201–Q300: Traits & Error Handling
+    ├── rust-interview-mcq-part4.ipynb   # Q301–Q400: Concurrency & Async
+    └── rust-interview-mcq-part5.ipynb   # Q401–Q500: Ecosystem & Mixed
 ```
 
 Each day is a Jupyter Notebook (`.ipynb`) using the EvCxR Rust kernel.
@@ -459,6 +481,51 @@ Choose one (or combine ideas):
 
 ---
 
+## 🎯 500 Interview Questions Quiz
+
+This repo includes a **companion quiz website** with 500 multiple-choice questions covering all major Rust topics. The quiz is built as a static site and can be hosted for free on GitHub Pages.
+
+### Topics Covered
+
+| Part | Topic | Questions |
+|------|-------|-----------|
+| 1 | Basics & Syntax | Q1–Q100 |
+| 2 | Ownership, Borrowing & Lifetimes | Q101–Q200 |
+| 3 | Traits, Generics & Error Handling | Q201–Q300 |
+| 4 | Concurrency, Async & Advanced | Q301–Q400 |
+| 5 | Ecosystem, Web, Systems & Mixed | Q401–Q500 |
+
+### Features
+
+- **Choose your quiz size:** 10, 20, 30, 50, or 100 questions per session
+- **Randomized questions** for each session (except full 100)
+- **Instant feedback** — green/red highlighting with explanations
+- **Score tracking** and progress saved in your browser
+- **Dark/light theme** toggle
+- **Responsive** — works on desktop and mobile
+- **Zero dependencies** — single HTML file, no frameworks
+
+### How to Use
+
+**Online:** Visit the [live quiz website](https://your-username.github.io/learn-rust-from-scratch/) (after enabling GitHub Pages)
+
+**Locally:** Open `docs/index.html` in your browser — it works offline.
+
+**Rebuild after editing questions:**
+```bash
+python build_quiz.py
+```
+
+### Deploy to GitHub Pages
+
+1. Push this repo to GitHub
+2. Go to **Settings** → **Pages**
+3. Set Source to **Deploy from a branch**
+4. Select **main** branch and **/docs** folder
+5. Save — your quiz will be live at `https://<username>.github.io/learn-rust-from-scratch/`
+
+---
+
 ## 📅 Daily Commit Strategy
 
 ### What Counts as a Commit
@@ -580,5 +647,7 @@ fix(week-09): resolve lifetime issue in data pipeline
 **Built with 🦀 and determination**
 
 *"The only way to learn a new programming language is by writing programs in it."* — Dennis Ritchie
+
+[Take the Quiz](https://your-username.github.io/learn-rust-from-scratch/) · [View Notebooks](resources/) · [Start Learning](month-01-foundations/week-01/day-01-hello-world.ipynb)
 
 </div>
