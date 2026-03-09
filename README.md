@@ -1,6 +1,6 @@
 # 🦀 Learn Rust from Scratch — 6-Month Mastery Plan
 
-A comprehensive 6-month curriculum to learn Rust from scratch, featuring **interactive Jupyter notebooks** for every lesson, hands-on mini-projects each week, and a companion **[quiz website with 1000 MCQ interview questions](https://your-username.github.io/learn-rust-from-scratch/)** to test your knowledge.
+A comprehensive 6-month curriculum to learn Rust from scratch, featuring **interactive Jupyter notebooks** for every lesson, hands-on mini-projects each week, and a companion **[quiz website with 1000 MCQ interview questions](https://williampepple1.github.io/learn-rust-from-scratch/)** to test your knowledge.
 
 > **Start Date:** March 8, 2026  
 > **End Date:** August 31, 2026  
@@ -539,7 +539,7 @@ This repo includes a **companion quiz website** with 1000 multiple-choice questi
 
 ### How to Use
 
-**Online:** Visit the [live quiz website](https://your-username.github.io/learn-rust-from-scratch/) (after enabling GitHub Pages)
+**Online:** Visit the [live quiz website](https://williampepple1.github.io/learn-rust-from-scratch/) (after enabling GitHub Pages)
 
 **Locally:** Open `docs/index.html` in your browser — it works offline.
 
@@ -737,6 +737,6 @@ fix(week-09): resolve lifetime issue in data pipeline
 
 *"The only way to learn a new programming language is by writing programs in it."* — Dennis Ritchie
 
-[Take the Quiz](https://your-username.github.io/learn-rust-from-scratch/) · [View Notebooks](resources/) · [Start Learning](month-01-foundations/week-01/day-01-hello-world.ipynb)
+[Take the Quiz](https://williampepple1.github.io/learn-rust-from-scratch/) · [View Notebooks](resources/) · [Start Learning](month-01-foundations/week-01/day-01-hello-world.ipynb)
 
 </div>
