@@ -15,6 +15,7 @@ A comprehensive 6-month curriculum to learn Rust from scratch, featuring **inter
 - 📓 **Interactive Jupyter Notebooks** using the [EvCxR Rust kernel](https://github.com/evcxr/evcxr) — run code inline
 - 🛠️ **24 mini-projects** including a calculator, URL shortener, log parser, and a key-value database
 - 🎯 **[1000 MCQ Quiz Website](https://williampepple1.github.io/learn-rust-from-scratch/)** — pick 10, 20, 30, 50, or 100 random questions per topic, with instant feedback, scoring, and dark/light theme
+- 📖 **15 interactive concept guides** rendered on the website — learn Rust's building blocks from variables to concurrency
 - 🧪 Topics span from "Hello, World!" to async/await, macros, unsafe Rust, FFI, and WASM
 
 ---
@@ -60,9 +61,11 @@ Each week has:
 learn-rust-from-scratch/
 ├── README.md                    # This file (your roadmap)
 ├── build_quiz.py                # Parses .ipynb MCQs → quiz-data.js
+├── build_guides.py              # Parses concept guides → guides-data.js
 ├── docs/
-│   ├── index.html               # Quiz website (single-page app)
-│   └── quiz-data.js             # Generated quiz data (1000 questions)
+│   ├── index.html               # Website (Learn + Quiz single-page app)
+│   ├── quiz-data.js             # Generated quiz data (1000 questions)
+│   └── guides-data.js           # Generated concept guide data (15 guides)
 ├── month-01-foundations/
 │   ├── week-01/
 │   │   ├── day-01-hello-world.ipynb
@@ -78,6 +81,11 @@ learn-rust-from-scratch/
 ├── month-05-systems/
 ├── month-06-capstone/
 └── resources/
+    ├── guides/                           # 15 concept guide notebooks
+    │   ├── 01-variables-and-types.ipynb
+    │   ├── 02-functions.ipynb
+    │   ├── ...
+    │   └── 15-concurrency.ipynb
     ├── rust-interview-mcq-part1.ipynb    # Q1–Q100: Basics & Syntax
     ├── rust-interview-mcq-part2.ipynb    # Q101–Q200: Ownership & Lifetimes
     ├── rust-interview-mcq-part3.ipynb    # Q201–Q300: Traits & Error Handling
@@ -513,6 +521,7 @@ This repo includes a **companion quiz website** with 1000 multiple-choice questi
 - **Score tracking** and progress saved in your browser
 - **Dark/light theme** toggle
 - **Responsive** — works on desktop and mobile
+- **15 concept guides** — read about variables, functions, structs, traits, ownership, and more
 - **Zero dependencies** — single HTML file, no frameworks
 
 ### How to Use
@@ -521,9 +530,10 @@ This repo includes a **companion quiz website** with 1000 multiple-choice questi
 
 **Locally:** Open `docs/index.html` in your browser — it works offline.
 
-**Rebuild after editing questions:**
+**Rebuild after editing questions or guides:**
 ```bash
 python build_quiz.py
+python build_guides.py
 ```
 
 ### Deploy to GitHub Pages

@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rust Interview MCQ — 1000 Questions</title>
+<title>Rust — Learn & Quiz</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --rust:#CE422B;--rust-light:#E05A3A;--rust-dark:#A83520;
   --green:#22C55E;--green-bg:rgba(34,197,94,.12);
   --red:#EF4444;--red-bg:rgba(239,68,68,.12);
+  --blue:#3B82F6;--blue-bg:rgba(59,130,246,.1);
   --radius:10px;--shadow:0 2px 12px rgba(0,0,0,.15);
   --transition:all .2s ease;
 }
@@ -38,6 +39,12 @@ a:hover{color:var(--rust-light)}
 .score-display em{font-style:normal;color:var(--green);font-size:18px}
 .theme-toggle{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:6px 12px;cursor:pointer;color:var(--text2);font-size:16px;transition:var(--transition)}
 .theme-toggle:hover{background:var(--bg4);color:var(--text)}
+
+/* Tabs */
+.tabs{display:flex;justify-content:center;gap:4px;padding:12px 24px;background:var(--bg)}
+.tab{padding:10px 28px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);color:var(--text2);font-size:15px;font-weight:600;cursor:pointer;transition:var(--transition)}
+.tab:hover{color:var(--text);border-color:var(--rust)}
+.tab.active{background:var(--rust);color:#fff;border-color:var(--rust)}
 
 /* Container */
 .container{max-width:900px;margin:0 auto;padding:24px}
@@ -141,6 +148,48 @@ a:hover{color:var(--rust-light)}
 .grade-beginner{background:rgba(239,68,68,.15);color:#EF4444}
 .results-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 
+/* ========== GUIDE STYLES ========== */
+.guide-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:32px}
+.guide-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:16px}
+.guide-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow)}
+.guide-emoji{font-size:36px;flex-shrink:0}
+.guide-info{flex:1}
+.guide-card-title{font-size:16px;font-weight:700;margin-bottom:2px}
+.guide-card-meta{font-size:12px;color:var(--text3)}
+
+.guide-reader{animation:fadeIn .3s ease}
+.guide-reader h1{font-size:clamp(24px,4vw,36px);font-weight:800;margin-bottom:8px;color:var(--text)}
+.guide-reader h1 .guide-r-emoji{margin-right:8px}
+
+.guide-toc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:28px}
+.guide-toc-title{font-size:13px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:10px}
+.guide-toc a{display:block;padding:4px 0;font-size:14px;color:var(--text2);transition:var(--transition)}
+.guide-toc a:hover{color:var(--rust)}
+
+.guide-section{margin-bottom:32px}
+.guide-section h2{font-size:22px;font-weight:700;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--border);scroll-margin-top:80px}
+
+.guide-block{margin-bottom:16px;font-size:15px;line-height:1.8}
+.guide-block h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.guide-block p{margin-bottom:8px}
+.guide-block ul,.guide-block ol{margin:8px 0 8px 24px}
+.guide-block li{margin-bottom:4px}
+.guide-block code{background:var(--code-bg);padding:2px 6px;border-radius:4px;font-family:'Cascadia Code','Fira Code','JetBrains Mono',monospace;font-size:13px;color:var(--rust-light)}
+.guide-block pre{background:var(--code-bg);padding:16px 20px;border-radius:8px;overflow-x:auto;margin:12px 0;border:1px solid var(--border);line-height:1.5}
+.guide-block pre code{background:none;padding:0;font-size:13px;color:var(--text)}
+.guide-block strong{color:var(--text)}
+.guide-block em{color:var(--text2)}
+.guide-block table{width:100%;border-collapse:collapse;margin:12px 0}
+.guide-block th,.guide-block td{padding:8px 12px;border:1px solid var(--border);text-align:left;font-size:14px}
+.guide-block th{background:var(--bg3);font-weight:700}
+
+.guide-code-block{background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:16px 20px;margin:12px 0;overflow-x:auto;position:relative}
+.guide-code-block pre{margin:0;padding:0;border:none;background:none}
+.guide-code-block code{font-family:'Cascadia Code','Fira Code','JetBrains Mono',monospace;font-size:13px;color:var(--text);line-height:1.6;background:none;padding:0}
+.guide-code-label{position:absolute;top:6px;right:10px;font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+
+.guide-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:32px 0}
+
 /* Footer */
 .footer{text-align:center;padding:32px;color:var(--text3);font-size:13px;border-top:1px solid var(--border);margin-top:48px}
 
@@ -148,11 +197,13 @@ a:hover{color:var(--rust-light)}
 @media(max-width:600px){
   .container{padding:16px}
   .header{padding:10px 16px}
+  .tabs{padding:8px 16px}
   .question-card{padding:20px}
   .stats-row{gap:20px}
   .q-grid{grid-template-columns:repeat(auto-fill,minmax(32px,1fr))}
-  .nav-bar{flex-wrap:wrap}
+  .nav-bar,.guide-nav{flex-wrap:wrap}
   .landing-hero{padding:24px 0 16px}
+  .guide-list{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -161,7 +212,7 @@ a:hover{color:var(--rust-light)}
 <header class="header">
   <div class="header-left" onclick="showLanding()">
     <span class="logo">🦀</span>
-    <div class="header-title"><span>Rust</span> MCQ Quiz</div>
+    <div class="header-title"><span>Rust</span> Learn & Quiz</div>
   </div>
   <div class="header-right">
     <div class="score-display" id="headerScore"></div>
@@ -169,13 +220,19 @@ a:hover{color:var(--rust-light)}
   </div>
 </header>
 
+<nav class="tabs" id="tabBar">
+  <button class="tab active" id="tabLearn" onclick="switchTab('learn')">📖 Learn</button>
+  <button class="tab" id="tabQuiz" onclick="switchTab('quiz')">🎯 Quiz</button>
+</nav>
+
 <main class="container" id="app"></main>
 
 <footer class="footer">
-  Built for <strong>learn-rust-from-scratch</strong> — 1000 interview questions to master Rust.
+  Built for <strong>learn-rust-from-scratch</strong> — 15 concept guides + 1000 interview questions to master Rust.
 </footer>
 
 <script src="quiz-data.js"></script>
+<script src="guides-data.js"></script>
 <script>
 (function(){
 "use strict";
@@ -184,6 +241,7 @@ const $ = (s,p) => (p||document).querySelector(s);
 const app = $('#app');
 const headerScore = $('#headerScore');
 
+let currentTab = 'learn';
 let state = loadState();
 
 function loadState(){
@@ -201,74 +259,238 @@ function shuffle(arr){
   return a;
 }
 
-function getPartQuestions(partIndex){
-  return QUIZ_DATA.questions.filter(q=>q.part===partIndex);
-}
-
+function getPartQuestions(partIndex){ return QUIZ_DATA.questions.filter(q=>q.part===partIndex); }
 function getActiveQuestions(){
-  if(state.sessionIds){
-    return state.sessionIds.map(id=>QUIZ_DATA.questions.find(q=>q.id===id)).filter(Boolean);
-  }
-  if(state.currentPart){
-    return getPartQuestions(state.currentPart);
-  }
+  if(state.sessionIds) return state.sessionIds.map(id=>QUIZ_DATA.questions.find(q=>q.id===id)).filter(Boolean);
+  if(state.currentPart) return getPartQuestions(state.currentPart);
   return [];
 }
-
 function getActiveStats(){
-  const qs=getActiveQuestions();
-  let answered=0,correct=0;
-  qs.forEach(q=>{
-    const a=state.answers[q.id];
-    if(a){answered++;if(a.correct)correct++;}
-  });
+  const qs=getActiveQuestions(); let answered=0,correct=0;
+  qs.forEach(q=>{ const a=state.answers[q.id]; if(a){answered++;if(a.correct)correct++;} });
   return {total:qs.length,answered,correct};
 }
-
 function getPartStats(partIndex){
-  const qs = getPartQuestions(partIndex);
-  let answered=0, correct=0;
-  qs.forEach(q=>{
-    const a = state.answers[q.id];
-    if(a){ answered++; if(a.correct) correct++; }
-  });
-  return {total:qs.length, answered, correct};
+  const qs=getPartQuestions(partIndex); let answered=0,correct=0;
+  qs.forEach(q=>{ const a=state.answers[q.id]; if(a){answered++;if(a.correct)correct++;} });
+  return {total:qs.length,answered,correct};
 }
 function getAllStats(){
   let answered=0,correct=0;
-  QUIZ_DATA.questions.forEach(q=>{
-    const a=state.answers[q.id];
-    if(a){answered++;if(a.correct)correct++;}
-  });
+  QUIZ_DATA.questions.forEach(q=>{ const a=state.answers[q.id]; if(a){answered++;if(a.correct)correct++;} });
   return {total:QUIZ_DATA.questions.length,answered,correct};
 }
 
 function updateHeaderScore(){
+  if(currentTab==='learn'){ headerScore.textContent=''; return; }
   if(state.currentPart && state.sessionIds){
     const s=getActiveStats();
-    if(s.answered>0){
-      headerScore.innerHTML=`<em>${s.correct}</em>/${s.answered}`;
-    } else { headerScore.textContent=''; }
+    headerScore.innerHTML = s.answered>0 ? `<em>${s.correct}</em>/${s.answered}` : '';
   } else {
     const s=getAllStats();
-    if(s.answered>0){
-      headerScore.innerHTML=`<em>${s.correct}</em>/${s.answered} correct`;
-    } else { headerScore.textContent=''; }
+    headerScore.innerHTML = s.answered>0 ? `<em>${s.correct}</em>/${s.answered} correct` : '';
   }
 }
 
 function renderMarkdown(text){
   if(!text) return '';
-  let html = text
+  return text
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/```(\w*)\n([\s\S]*?)```/g, (m,lang,code)=>{
-      return `<pre><code>${code.trim()}</code></pre>`;
-    })
+    .replace(/```(\w*)\n([\s\S]*?)```/g, (m,lang,code)=> `<pre><code>${code.trim()}</code></pre>`)
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/\n/g,'<br>');
-  return html;
 }
+
+function renderGuideMarkdown(text){
+  if(!text) return '';
+  let html = text;
+  html = html.replace(/```(\w*)\n([\s\S]*?)```/g, (m,lang,code)=>{
+    const label = lang ? `<span class="guide-code-label">${lang}</span>` : '';
+    const escaped = code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    return `<div class="guide-code-block">${label}<pre><code>${escaped.trim()}</code></pre></div>`;
+  });
+  html = html.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+  html = html.replace(/\|(.+)\|/g, function(match){
+    return match;
+  });
+  const lines = html.split('\n');
+  let result = [];
+  let inTable = false;
+  let tableRows = [];
+  let inList = false;
+  let listItems = [];
+  let listType = 'ul';
+
+  function flushList(){
+    if(listItems.length){
+      result.push(`<${listType}>${listItems.join('')}</${listType}>`);
+      listItems = [];
+    }
+    inList = false;
+  }
+  function flushTable(){
+    if(tableRows.length){
+      let thead = '', tbody = '';
+      tableRows.forEach((row,i)=>{
+        const cells = row.split('|').filter(c=>c.trim()!=='');
+        if(i===0){
+          thead = '<thead><tr>' + cells.map(c=>`<th>${processInline(c.trim())}</th>`).join('') + '</tr></thead>';
+        } else if(i===1 && /^[\s\-|:]+$/.test(row)){
+          // separator row
+        } else {
+          tbody += '<tr>' + cells.map(c=>`<td>${processInline(c.trim())}</td>`).join('') + '</tr>';
+        }
+      });
+      result.push(`<table>${thead}<tbody>${tbody}</tbody></table>`);
+      tableRows = [];
+    }
+    inTable = false;
+  }
+
+  function processInline(t){
+    return t
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  }
+
+  for(let i=0; i<lines.length; i++){
+    const line = lines[i];
+    if(line.startsWith('<div class="guide-code-block">')){
+      flushList(); flushTable();
+      let block = line;
+      while(i<lines.length-1 && !lines[i].includes('</div>')){
+        i++; block += '\n' + lines[i];
+      }
+      if(!block.includes('</div>')){ i++; block += '\n' + (lines[i]||''); }
+      result.push(block);
+      continue;
+    }
+    if(line.startsWith('<h3>')){
+      flushList(); flushTable();
+      result.push(line);
+      continue;
+    }
+    if(/^\|.+\|$/.test(line.trim())){
+      flushList();
+      inTable = true;
+      tableRows.push(line.trim());
+      continue;
+    }
+    if(inTable){ flushTable(); }
+    const ulMatch = line.match(/^[-*]\s+(.+)/);
+    const olMatch = line.match(/^\d+\.\s+(.+)/);
+    if(ulMatch){
+      if(!inList || listType!=='ul'){ flushList(); inList=true; listType='ul'; }
+      listItems.push(`<li>${processInline(ulMatch[1])}</li>`);
+      continue;
+    }
+    if(olMatch){
+      if(!inList || listType!=='ol'){ flushList(); inList=true; listType='ol'; }
+      listItems.push(`<li>${processInline(olMatch[1])}</li>`);
+      continue;
+    }
+    flushList();
+    const trimmed = line.trim();
+    if(!trimmed){ continue; }
+    result.push(`<p>${processInline(trimmed)}</p>`);
+  }
+  flushList(); flushTable();
+  return result.join('\n');
+}
+
+/* ========== TAB SWITCHING ========== */
+window.switchTab = function(tab){
+  currentTab = tab;
+  $('#tabLearn').classList.toggle('active', tab==='learn');
+  $('#tabQuiz').classList.toggle('active', tab==='quiz');
+  if(tab==='learn'){ showGuidesList(); }
+  else { showLanding(); }
+};
+
+/* ========== GUIDES ========== */
+function showGuidesList(){
+  updateHeaderScore();
+  let cardsHTML = '';
+  GUIDES_DATA.forEach((g,i)=>{
+    cardsHTML += `
+      <div class="guide-card" onclick="openGuide(${i})">
+        <div class="guide-emoji">${g.emoji}</div>
+        <div class="guide-info">
+          <div class="guide-card-title">${g.title}</div>
+          <div class="guide-card-meta">${g.sectionCount} sections</div>
+        </div>
+      </div>`;
+  });
+
+  app.innerHTML=`
+    <div class="landing-hero">
+      <h1>📖 <span>Rust</span> Building Blocks</h1>
+      <p>Learn the core concepts of Rust — from variables to concurrency</p>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">${GUIDES_DATA.length}</div><div class="stat-label">Guides</div></div>
+        <div class="stat"><div class="stat-num">${GUIDES_DATA.reduce((s,g)=>s+g.sectionCount,0)}</div><div class="stat-label">Sections</div></div>
+      </div>
+    </div>
+    <div class="guide-list">${cardsHTML}</div>`;
+}
+
+window.openGuide = function(index){
+  const g = GUIDES_DATA[index];
+  if(!g) return;
+
+  let tocHTML = '';
+  g.sections.forEach((sec,si)=>{
+    if(sec.heading){
+      tocHTML += `<a href="#section-${si}" onclick="event.preventDefault();document.getElementById('section-${si}').scrollIntoView({behavior:'smooth'})">${sec.heading}</a>`;
+    }
+  });
+
+  let sectionsHTML = '';
+  g.sections.forEach((sec,si)=>{
+    let blocksHTML = '';
+    sec.blocks.forEach(block=>{
+      if(block.type === 'code'){
+        const escaped = block.content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        blocksHTML += `<div class="guide-code-block"><span class="guide-code-label">rust</span><pre><code>${escaped}</code></pre></div>`;
+      } else {
+        blocksHTML += `<div class="guide-block">${renderGuideMarkdown(block.content)}</div>`;
+      }
+    });
+    sectionsHTML += `
+      <div class="guide-section" id="section-${si}">
+        ${sec.heading ? `<h2>${sec.heading}</h2>` : ''}
+        ${blocksHTML}
+      </div>`;
+  });
+
+  const prevIdx = index > 0 ? index - 1 : null;
+  const nextIdx = index < GUIDES_DATA.length - 1 ? index + 1 : null;
+
+  app.innerHTML=`
+    <div class="guide-reader">
+      <div class="guide-nav">
+        <button class="nav-btn" onclick="showGuidesList()">&#8592; All Guides</button>
+        <div style="display:flex;gap:8px">
+          ${prevIdx !== null ? `<button class="nav-btn" onclick="openGuide(${prevIdx})">&#8592; Prev</button>` : ''}
+          ${nextIdx !== null ? `<button class="nav-btn primary" onclick="openGuide(${nextIdx})">Next &#8594;</button>` : ''}
+        </div>
+      </div>
+      <h1><span class="guide-r-emoji">${g.emoji}</span>${g.title}</h1>
+      ${tocHTML ? `<div class="guide-toc"><div class="guide-toc-title">Contents</div>${tocHTML}</div>` : ''}
+      ${sectionsHTML}
+      <div class="guide-nav">
+        <button class="nav-btn" onclick="showGuidesList()">&#8592; All Guides</button>
+        <div style="display:flex;gap:8px">
+          ${prevIdx !== null ? `<button class="nav-btn" onclick="openGuide(${prevIdx})">&#8592; ${GUIDES_DATA[prevIdx].title}</button>` : ''}
+          ${nextIdx !== null ? `<button class="nav-btn primary" onclick="openGuide(${nextIdx})">${GUIDES_DATA[nextIdx].title} &#8594;</button>` : ''}
+        </div>
+      </div>
+    </div>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+};
 
 /* ========== SIZE PICKER MODAL ========== */
 function showSizePicker(partIndex){
@@ -295,11 +517,9 @@ function showSizePicker(partIndex){
 window.launchQuiz = function(partIndex, count){
   const overlay = document.querySelector('.modal-overlay');
   if(overlay) overlay.remove();
-
   const allQs = getPartQuestions(partIndex);
   state.currentPart = partIndex;
   state.currentIndex = 0;
-
   if(count >= allQs.length){
     state.sessionIds = allQs.map(q=>q.id);
     state.sessionLabel = `All ${allQs.length}`;
@@ -308,13 +528,12 @@ window.launchQuiz = function(partIndex, count){
     state.sessionIds = picked.map(q=>q.id);
     state.sessionLabel = `${count} Random`;
   }
-
   state.sessionIds.forEach(id=>delete state.answers[id]);
   saveState();
   renderQuiz();
 };
 
-/* ========== LANDING PAGE ========== */
+/* ========== QUIZ LANDING ========== */
 function showLanding(){
   state.currentPart=null;
   state.sessionIds=null;
@@ -339,7 +558,7 @@ function showLanding(){
 
   app.innerHTML=`
     <div class="landing-hero">
-      <h1>🦀 <span>Rust</span> Interview Quiz</h1>
+      <h1>🎯 <span>Rust</span> Interview Quiz</h1>
       <p>1000 multiple-choice questions to test your Rust knowledge</p>
       <div class="stats-row">
         <div class="stat"><div class="stat-num">1000</div><div class="stat-label">Questions</div></div>
@@ -355,9 +574,7 @@ function showLanding(){
     </div>`;
 }
 
-window.openPart = function(partIndex){
-  showSizePicker(partIndex);
-};
+window.openPart = function(partIndex){ showSizePicker(partIndex); };
 
 /* ========== QUIZ MODE ========== */
 function renderQuiz(){
@@ -371,7 +588,6 @@ function renderQuiz(){
   const stats = getActiveStats();
   const pct = Math.round((idx+1)/qs.length*100);
   const answered = state.answers[q.id];
-
   const modeLabel = state.sessionLabel || `${qs.length} Questions`;
 
   let optionsHTML='';
@@ -384,11 +600,10 @@ function renderQuiz(){
       else if(letter===answered.choice) cls+=' wrong';
       else cls+=' dim';
     }
-    const optText = renderMarkdown(q.options[letter]);
     optionsHTML+=`
       <div class="${cls}" onclick="pickAnswer(${q.id},'${letter}')">
         <div class="option-letter">${letter}</div>
-        <div class="option-text">${optText}</div>
+        <div class="option-text">${renderMarkdown(q.options[letter])}</div>
       </div>`;
   });
 
@@ -432,9 +647,7 @@ function renderQuiz(){
         ?`<button class="nav-btn primary" onclick="showResults()">See Results &rarr;</button>`
         :`<button class="nav-btn primary" onclick="nextQ()" ${idx===qs.length-1?'disabled':''}>Next &rarr;</button>`}
     </div>
-    <div class="q-grid-toggle" onclick="toggleGrid()">
-      ${state.gridOpen?'Hide':'Show'} question grid
-    </div>
+    <div class="q-grid-toggle" onclick="toggleGrid()">${state.gridOpen?'Hide':'Show'} question grid</div>
     <div class="q-grid ${state.gridOpen?'':'hidden'}" id="qGrid">${gridHTML}</div>`;
 
   updateHeaderScore();
@@ -445,10 +658,8 @@ window.pickAnswer = function(qid, letter){
   if(state.answers[qid]) return;
   const q = QUIZ_DATA.questions.find(x=>x.id===qid);
   state.answers[qid] = { choice:letter, correct:letter===q.correct };
-  saveState();
-  renderQuiz();
+  saveState(); renderQuiz();
 };
-
 window.nextQ = function(){
   const qs = getActiveQuestions();
   if(state.currentIndex < qs.length-1){ state.currentIndex++; saveState(); renderQuiz(); }
@@ -456,15 +667,11 @@ window.nextQ = function(){
 window.prevQ = function(){
   if(state.currentIndex > 0){ state.currentIndex--; saveState(); renderQuiz(); }
 };
-window.goToQ = function(idx){
-  state.currentIndex = idx; saveState(); renderQuiz();
-};
+window.goToQ = function(idx){ state.currentIndex = idx; saveState(); renderQuiz(); };
 window.toggleGrid = function(){
   state.gridOpen = !state.gridOpen; saveState();
-  const g=$('#qGrid');
-  if(g) g.classList.toggle('hidden');
-  const t=$('.q-grid-toggle');
-  if(t) t.textContent = state.gridOpen ? 'Hide question grid' : 'Show question grid';
+  const g=$('#qGrid'); if(g) g.classList.toggle('hidden');
+  const t=$('.q-grid-toggle'); if(t) t.textContent = state.gridOpen ? 'Hide question grid' : 'Show question grid';
 };
 
 /* ========== RESULTS ========== */
@@ -496,28 +703,16 @@ window.showResults = function(){
   updateHeaderScore();
 };
 
-window.reviewQuiz = function(){
-  state.currentIndex=0;
-  saveState();
-  renderQuiz();
-};
+window.reviewQuiz = function(){ state.currentIndex=0; saveState(); renderQuiz(); };
 window.quitQuiz = function(){
   if(!confirm('Reset this quiz session and go back to home?')) return;
-  if(state.sessionIds){
-    state.sessionIds.forEach(id=>delete state.answers[id]);
-  }
-  state.currentPart=null;
-  state.sessionIds=null;
-  state.sessionLabel=null;
-  state.currentIndex=0;
-  saveState();
-  showLanding();
+  if(state.sessionIds) state.sessionIds.forEach(id=>delete state.answers[id]);
+  state.currentPart=null; state.sessionIds=null; state.sessionLabel=null; state.currentIndex=0;
+  saveState(); showLanding();
 };
 window.resetAll = function(){
   if(!confirm('Reset ALL progress across every quiz? This cannot be undone.')) return;
-  state.answers={};
-  saveState();
-  showLanding();
+  state.answers={}; saveState(); showLanding();
 };
 
 /* ========== THEME ========== */
@@ -533,11 +728,7 @@ function toggleTheme(){
 })();
 
 /* ========== INIT ========== */
-if(state.currentPart && state.sessionIds){
-  renderQuiz();
-} else {
-  showLanding();
-}
+showGuidesList();
 
 })();
 </script>
